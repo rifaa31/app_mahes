@@ -19,20 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::prefix('landing')->group(function () {
-    Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-    Route::get('/booknow', [LandingController::class, 'booknow'])->name('landing.booknow');
-    Route::post('/store', [LandingController::class, 'store'])->name('landing.store');
-});
-
 Auth::routes();
 //Language Translation
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
 
-Route::get('/', [LandingController::class, 'index'])->name('landing.index');
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'root']);
-// Route::get('/calendar-event', [App\Http\Controllers\HomeController::class, 'root']);
-// Route::post('/calendar-crud-ajax', [App\Controllers\Http\HomeController::class, 'calendarEvents']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'root']);
+Route::get('/calendar-event', [App\Http\Controllers\HomeController::class, 'root']);
+Route::post('/calendar-crud-ajax', [App\Controllers\Http\HomeController::class, 'calendarEvents']);
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
@@ -51,21 +44,24 @@ Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class
 
 Route::prefix('booking')->group(function () {
 
-    Route::get('/booking_pdf', [BookingController::class, 'booking_pdf'])->name('booking.booking_pdf');
     Route::get('/', [BookingController::class, 'index'])->name('booking.index');
-    Route::get('/update_status_booking', [BookingController::class, 'update_status_booking'])->name('booking.update_status_booking');
     Route::delete('/destroy/{id}', [BookingController::class, 'destroy'])->name('booking.destroy');
-
+    Route::get('/update_status_booking', [BookingController::class, 'update_status_booking'])->name('booking.update_status_booking');
+    Route::get('/booking_pdf', [BookingController::class, 'booking_pdf'])->name('booking.booking_pdf');
     Route::get('/detail/{id}', [BookingController::class, 'show'])->name('booking.detail');
     Route::get('/edit', [BookingController::class, 'edit'])->name('booking.edit');
     Route::get('/create', [BookingController::class, 'create'])->name('booking.create');
     Route::post('/store', [BookingController::class, 'store'])->name('booking.store');
     Route::put('/{id}', [BookingController::class, 'update'])->name('booking.update');
-
     Route::get('/{id}', [BookingController::class, 'getBookingById'])->name('booking.getBookingById');
+
 });
 
-
+Route::prefix('landing')->group(function () {
+    Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+    Route::get('/booknow', [LandingController::class, 'booknow'])->name('landing.booknow');
+    Route::post('/store', [LandingController::class, 'store'])->name('landing.store');
+});
 
 Route::prefix('product')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('product.index');

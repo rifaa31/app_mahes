@@ -67,18 +67,10 @@
                                     </div>
                                 </li>
                             </ul>
-                            {{-- <div class="" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
-                                aria-controls="collapse">
-                                <a href="javascript:void(0);" class="card-link link-secondary">Lihat selengkapnya <i
-                                        class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
-                            </div> --}}
 
                         </div>
                         <div class="card-footer">
                             <div class=" d-flex justify-content-between">
-                                {{-- <a href='{{ route('product.update', $item['id']) }}'
-                                    class="btn btn-soft-primary edit-btn"><i></i>
-                                    Edit</a> --}}
                                 <form onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');"
                                     action="{{ route('product.destroy', $item['id']) }}" method="POST">
                                     <a href='{{ route('product.edit', $item['id']) }}'
@@ -88,8 +80,6 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-soft-danger clear-btn">Hapus</button>
                                 </form>
-                                {{-- <a onclick="deleteTesti({{ $item['id'] }})" class="btn btn-soft-danger clear-btn"><i></i>
-                                     Hapus</a> --}}
                             </div>
                         </div>
                     </div>

@@ -271,6 +271,72 @@
             </section>
             <!-- end services -->
 
+            <section class="section bg-light" id="plans">
+                <div class="bg-overlay bg-overlay-pattern"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="text-center mb-5">
+                                <h3 class="mb-3 fw-semibold">Choose the plan that's right for you</h3>
+                                <p class="text-muted mb-4">Simple pricing. No hidden fees. Advanced features for you
+                                    business.</p>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row gy-4">
+                            @foreach ($package as $item)
+                                <div class="col-lg-4">
+                                    <div class="card plan-box mb-0">
+                                        <div class="card-body p-4 m-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-grow-1">
+                                                    <h5 class="mb-1 fw-semibold">{{ $item['title'] }}</h5>
+                                                    <p class="text-muted mb-0">For Startup</p>
+                                                </div>
+                                                <div class="avatar-sm">
+                                                    <div class="avatar-title bg-light rounded-circle text-primary">
+                                                        <i class="ri-book-mark-line fs-20"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="py-4 text-center">
+                                                <h1 class="month"><sup><small>$</small></sup><span
+                                                        class="ff-secondary fw-bold">19</span> <span
+                                                        class="fs-13 text-muted">/Month</span></h1>
+                                            </div>
+
+                                            <div>
+                                                <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
+                                                    <li>
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 text-success me-1">
+                                                                <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                Upto <b>3</b> Projects
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="mt-4">
+                                                    <a href="javascript:void(0);" class="btn btn-soft-success w-100">Get
+                                                        Started</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            @endforeach
+                        </div>
+
+                        <!--end row-->
+                    </div>
+                    <!-- end container -->
+            </section>
+
             <!-- start plan -->
             <section class="section bg-light" id="package">
                 <div class="bg-overlay bg-overlay-pattern"></div>
@@ -289,8 +355,6 @@
                         <div class="swiper-wrapper">
                             @foreach ($package as $item)
                                 <div class="swiper-slide">
-                                    {{-- <div class="row"> --}}
-                                    <!--paket1-->
                                     <div class="row">
                                         <div class="col-lg-12 justify-content-between">
                                             <div class="card plan-box mb-0">
@@ -305,7 +369,30 @@
                                                         <h1 class="month"><sup></sup><span
                                                                 class="ff-secondary fw-bold">{{ number_format($item['price'], 0, '', '.') }}</span>
                                                     </div>
-                                                    <div>
+                                                    <div class="accordion custom-accordionwithicon"
+                                                        id="genques-accordion">
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="genques-headingTwo">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#genques-collapseTwo"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="genques-collapseTwo">
+                                                                    Detail Package
+                                                                </button>
+                                                            </h2>
+                                                            <div id="genques-collapseTwo"
+                                                                class="accordion-collapse collapse"
+                                                                aria-labelledby="genques-headingTwo"
+                                                                data-bs-parent="#genques-accordion">
+                                                                <div class="accordion-body ff-secondary">
+                                                                    {!! $item['description'] !!}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        {{-- </div> --}}
+                                                        {{-- <div>
                                                         <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
                                                             <li>
                                                                 <div class="d-flex">
@@ -316,13 +403,7 @@
                                                             </li>
 
                                                         </ul>
-                                                        {{-- <div class="" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapse1" aria-expanded="false"
-                                                            aria-controls="collapse">
-                                                            <a href="javascript:void(0);"
-                                                                class="card-link link-secondary">Lihat selengkapnya <i
-                                                                    class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
-                                                        </div> --}}
+                                                        --}}
                                                         <div class="mt-4">
                                                             <a class="btn btn-soft-success w-100"
                                                                 onclick="location.href='{{ route('landing.booknow') }}'">Book
@@ -357,58 +438,25 @@
                                 <h3 class="mb-3 fw-semibold">ADDITIONAL</h3>
                             </div>
                             <div class="row">
-                                <div class="col-xxl-6">
-                                    <div class="card">
-                                        <div class="row g-0">
-                                            <div class="col-md-2">
-                                                <img class="rounded-start img-fluid h-100 object-cover"
-                                                    src="{{ URL::asset('assets/images/small/img1.jpg') }}"
-                                                    alt="Card image">
+                                @foreach ($additional as $item)
+                                    <div class="col-sm-6 col-xl-3">
+                                        <div class="card">
+                                            <img class="card-img-top img-fluid" src="assets/images/small/img-2.jpg"
+                                                alt="Card image cap">
+                                            {{-- src="{{ URL::asset('assets/images/small/img1.jpg') }}" --}}
+                                            <div class="card-body">
+                                                <h4 class="card-title mb-2">{{ $item['title'] }}</h4>
+                                                <p class="card-text mb-0">{{ number_format($item['price'], 0, '', '.') }}
+                                                </p>
                                             </div>
-                                            <div class="col-md-8">
-                                                <div class="card-header">
-                                                    <h5 class="card-title mb-0">Additional</h5>
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-2"> <b>IDR 600.000</b> | Saxophone/Biola
-                                                    </p>
-                                                    <p class="card-text mb-2"><b>IDR 700.000</b> |
-                                                        Fireworks,confetty
-                                                    </p>
-                                                    <p class="card-text mb-2"><b>IDR 250.000</b> | Balon Helium
-                                                    </p>
-                                                    <p class="card-text mb-2"><b>IDR 250.000</b> | Dry Ice,
-                                                        Firework,
-                                                        Confetty, Balon
-                                                        Helium </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
-                                <div class="col-xxl-6">
-                                    <div class="card">
-                                        <div class="row g-0">
-                                            <div class="col-md-2">
-                                                <img class="rounded-end img-fluid h-100 object-cover"
-                                                    src="{{ URL::asset('assets/images/small/img-light.jpg') }}"
-                                                    alt="Card image">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-header">
-                                                    <h5 class="card-title mb-0">Lighting equipment</h5>
-                                                    <h5 class="card-title mb-0"><b>IDR 2.500.000</b></h5>
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-2">- 4 Beam</p>
-                                                    <p class="card-text mb-2">- 12 Parled</p>
-                                                    <p class="card-text mb-2">- 4 Peresnel</p>
-                                                    <p class="card-text mb-2">- 1 Genset + Bahan Bakar</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
+                                            {{-- <div class="card-footer">
+                                                <a href="javascript:void(0);" class="card-link link-secondary">Read More
+                                                    <i class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
+                                            </div> --}}
+                                        </div><!-- end card -->
+                                    </div><!-- end col -->
+                                @endforeach
+
                             </div><!-- end row -->
                         </div><!-- end col -->
                     </div><!-- end row -->
@@ -417,65 +465,48 @@
                             <div class="text-center mb-5">
                                 <h3 class="mb-3 fw-semibold">MUSIC ENTERTAINMENT</h3>
                             </div>
-                            <div class="row">
-                                <div class="col-xxl-6">
-                                    <div class="card">
+                            <div class="row ">
+                                @foreach ($entertainment as $item)
+                                    <div class="card mb-3" style="max-width: 540px;">
                                         <div class="row g-0">
-                                            <div class="col-md-2">
+                                            <div class="col-md-4">
                                                 <img class="rounded-start img-fluid h-100 object-cover"
                                                     src="{{ URL::asset('assets/images/small/music1.jpg') }}"
-                                                    alt="Card image">
+                                                    class="img-fluid rounded-start" alt="Card image">
                                             </div>
                                             <div class="col-md-8">
-                                                <div class="card-header">
-                                                    <h5 class="card-title mb-0">Eectone</h5>
-                                                    <h5 class="card-title mb-0"><b>IDR 4.000.000</b></h5>
-                                                </div>
                                                 <div class="card-body">
-                                                    <p class="card-text mb-2">- 2 Orang Penyanyi (P&L)</p>
-                                                    <p class="card-text mb-2">- Keyboadist</p>
-                                                    <p class="card-text mb-2">- Saxophone</p>
-                                                    <p class="card-text mb-2">- Kendang</p>
-                                                    <p class="card-text mb-2">- Sound Sistem 3000 watt</p>
-                                                    <p class="card-text mb-2">- Diesel</p>
-                                                    <p><br></p>
-                                                    <p class="card-text"><small class="text-muted">Start
+                                                    <h5 class="card-title">{{ $item['title'] }}</h5>
+                                                    <p class="card-text">{{ number_format($item['price'], 0, '', '.') }}
+                                                    </p>
+                                                    <p class="card-text">{!! $item['description'] !!}</p>
+                                                    <p class="card-text"><small class="text-body-secondary">Start
                                                             Performance
                                                             10.00-16.00 WIB</small></p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
-                                <div class="col-xxl-6">
-                                    <div class="card">
-                                        <div class="row g-0">
-                                            <div class="col-md-2">
-                                                <img class="rounded-end img-fluid h-100 object-cover"
-                                                    src="{{ URL::asset('assets/images/small/music2.jpg') }}"
-                                                    alt="Card image">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-header">
-                                                    <h5 class="card-title mb-0">Band / Akustik</h5>
-                                                    <h5 class="card-title mb-0"><b>IDR 6.000.000</b></h5>
-                                                </div>
-                                                <div class="card-body">
-                                                    <p class="card-text mb-2">- 2 Orang Penyanyi (P&L)</p>
-                                                    <p class="card-text mb-2">- Gitar</p>
-                                                    <p class="card-text mb-2">- Bass</p>
-                                                    <p class="card-text mb-2">- Drum</p>
-                                                    <p class="card-text mb-2">- Sexophone / Biola</p>
-                                                    <p class="card-text mb-2">- Sound Sistem 5000 watt</p>
-                                                    <p class="card-text mb-2">- Diesel</p>
-                                                    <p class="card-text"><small class="text-muted">Start
-                                                            Performance
-                                                            10.00-16.00 WIB</small></p>
-                                                </div>
+                                    </div>
+                                @endforeach
+
+                                {{-- @foreach ($entertainment as $item)
+                                    <div class="col-sm-6 col-xl-3 ">
+                                        <div class="card">
+                                            <img class="card-img-top img-fluid" src="assets/images/small/img-2.jpg"
+                                                alt="Card image cap">
+                                            {{-- src="{{ URL::asset('assets/images/small/img1.jpg') }}" --}}
+                                {{-- <div class="card-body">
+                                                <h4 class="card-title mb-2">{{ $item['title'] }}</h4>
+                                                <p class="card-text mb-0">{{ number_format($item['price'], 0, '', '.') }}
+                                                </p>
+                                                <p class="card-text"><small class="text-muted">Start
+                                                        Performance
+                                                        10.00-16.00 WIB</small></p>
                                             </div>
                                         </div>
-                                    </div><!-- end card -->
-                                </div><!-- end col -->
+                                    </div> --}}
+                                {{-- @endforeach --}}
+
                             </div><!-- end row -->
                         </div><!-- end row -->
                     </div>
@@ -496,440 +527,43 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper upacara " dir="ltr">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <!--upacara adat1-->
-                                <div class="col-xl-12" id="card-none1">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="card-title mb-0">Mapag Calon Panganten</h6>
-                                                    <h6 class="card-title mb-0"><b>IDR 3.500.000</b></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body collapse show" id="collapseexample1">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Live Music
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kecapi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Suling
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kendang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Biola
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Juru Kawi/sinden
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Perkusi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Pemandu Rangkaian Adat
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Penari 6 Orang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Lengser / Ambu
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- upacara adat1 -->
-                            </div>
 
-                            <div class="swiper-slide">
-                                <!-- upacara adat2 -->
-                                <div class="col-xl-12" id="card-none2">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="card-title mb-0">Mapag Panganten + Tari Rampak
-                                                        Badaya</h6>
-                                                    <h6 class="card-title mb-0"><b>IDR 4.500.000</b></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body collapse show" id="collapseexample1">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Live Music
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kecapi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Suling
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kendang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Biola
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Juru Kawih/sinden
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Perkusi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Pemandu Rangkaian Adat
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Penari 7 Orang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Lengser / Ambu
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Tari Badaya
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- upacara adat2 -->
+                    <!--upacara adat1-->
+                    @foreach ($upacara_adat as $item)
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item['title'] }}</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    {{ number_format($item['price'], 0, '', '.') }}</h6>
+                                <p class="card-text">{!! $item['description'] !!}</p>
+                                {{-- <a href="#" class="card-link">Card link</a> --}}
+                                <a href="#" class="card-link">Another link</a>
                             </div>
-
-                            <div class="swiper-slide">
-                                <!-- upacara adat3 -->
-                                <div class="col-xl-12" id="card-none3">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="card-title mb-0">Mapag Panganten + Tari Rampak
-                                                        Kendang</h6>
-                                                    <h6 class="card-title mb-0"><b>IDR 4.500.000</b></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body collapse show" id="collapseexample1">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Live Music
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kecapi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Suling
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kendang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Biola
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Juru Kawih/sinden
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Perkusi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Pemandu Rangkaian Adat
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Penari 7 Orang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Lengser / Ambu
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Tari Rampak Kendang
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- upacara adat3 -->
-                            </div>
-
-                            <div class="swiper-slide">
-                                <!-- upacara adat4 -->
-                                <div class="col-xl-12" id="card-none3">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="card-title mb-0">Mapag Panganten + Tari Rampak
-                                                        Kendang +
-                                                        Rama Sinta</h6>
-                                                    <h6 class="card-title mb-0"><b>IDR 5.000.000</b></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body collapse show" id="collapseexample1">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Live Music
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kecapi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Suling
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kendang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Biola
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Juru Kawih/sinden
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Perkusi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Pemandu Rangkaian Adat
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Penari 7 Orang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Lengser / Ambu
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Tari Rampak Kendang
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Tari Rama Sinta
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- upacara adat4 -->
-                            </div>
-
-                            <div class="swiper-slide">
-                                <!-- upacara adat5 -->
-                                <div class="col-xl-12" id="card-none3">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-grow-1">
-                                                    <h6 class="card-title mb-0">Siraman</h6>
-                                                    <h6 class="card-title mb-0"><b>IDR 1.500.000</b></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body collapse show" id="collapseexample1">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Pemandu
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Kecapi
-                                                </div>
-                                            </div>
-                                            <div class="d-flex mt-2">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-checkbox-circle-fill text-primary"></i>
-                                                </div>
-                                                <div class="flex-grow-1 ms-2 text-muted">Suling
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- upacara adat5 -->
-                            </div>
-
                         </div>
-                    </div>
+                    @endforeach
+                    {{-- <div class="col-xl-12" id="card-none1">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h6 class="card-title mb-0">Mapag Calon Panganten</h6>
+                                        <h6 class="card-title mb-0"><b>IDR 3.500.000</b></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body collapse show" id="collapseexample1">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 text-muted">Live Music
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                </div>
 
-                </div><!-- end row -->
             </div><!-- end row -->
         </section>
         <!-- end upacara adat -->
@@ -941,7 +575,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h3 class="mb-3 fw-semibold">Wedding <span class="text-danger">Consultant</span></h3>
+                            <h3 class="mb-3 fw-semibold">WEDDING <span class="text-danger">CONSULTANT</span></h3>
                         </div>
                     </div>
                     <!-- end row -->
@@ -1032,7 +666,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h3 class="mb-3 fw-semibold">Get In Touch</h3>
+                            <h3 class="mb-3 fw-semibold">CONTACT</h3>
                         </div>
                     </div>
                 </div>
@@ -1042,12 +676,12 @@
                     <div class="col-lg-4">
                         <div>
                             <div class="mt-4">
-                                <h5 class="fs-13 text-muted text-uppercase">Office Address 1:</h5>
+                                <h5 class="fs-13 text-muted text-uppercase">Alamat : </h5>
                                 <div class="ff-secondary fw-semibold">Perum Panorama Asri, Jl. Gorontalo
                                     No.14<br />Kecamatan Sukahaji <br> Kabupaten Majalengka</div>
                             </div>
                             <div class="mt-4">
-                                <h5 class="fs-13 text-muted text-uppercase">Working Hours:</h5>
+                                <h5 class="fs-13 text-muted text-uppercase">Waktu : </h5>
                                 <div class="ff-secondary fw-semibold">09:00am to 05:00pm</div>
                             </div>
                             <div>
@@ -1091,26 +725,35 @@
             <div class="container d-flex justify-content-center mt-100 mb-100">
                 <div class="row">
                     <div class="text-center mb-5">
-                        <h3 class="mb-3 fw-semibold"> TESTIMONIAL PENGANTIN</h3>
+                        <h3 class="mb-3 fw-semibold"> TESTIMONI PENGANTIN</h3>
                         <p class="text-muted mb-4">Berikut adalah Testimoni Dari Pengantin Yang Telah Menggunakan Jasa
                             Kami.</p>
                     </div>
                     <div class="col-md-12">
                         <div class="card">
-                            {{-- <div class="card-body">
-                                    <h4 class="card-title">Recent Comments</h4>
-                                    <h6 class="card-subtitle">Latest Comments section by users</h6>
-                                </div> --}}
                             @foreach ($testimoni['data'] as $item)
-                                <div class="comment-widgets m-b-20">
+                                <div class="list-group">
+                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action">
+                                        <div class="d-flex mb-2 align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <img src="{{ URL::asset('assets/images/users/user-dummy-img.jpg') }}"
+                                                    {{-- src="assets/images/users/avatar-1.jpg"  --}} alt=""
+                                                    class="avatar-sm rounded-circle" />
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h5 class="list-title fs-15 mb-1">{{ $item['customer_name'] }}</h5>
+                                                <p class="list-text mb-0 fs-12">{{ $item['customer_date'] }}</p>
+                                            </div>
+                                        </div>
+                                        <p class="list-text mb-0">{{ $item['massage'] }}</p>
+                                    </a>
+                                </div>
+
+                                {{-- <div class="comment-widgets m-b-20">
                                     <div class="d-flex flex-row comment-row">
                                         <div class="p-2"><span class="round"><img
                                                     src="{{ URL::asset('assets/images/users/user-dummy-img.jpg') }}"
                                                     alt="Header Avatar" width="50"></span></div>
-                                        {{-- <div class="p-2"><span class="round"><img
-                                                        src="@if {{ images/{{ $item['image'] }} }}
-                                                @else{{ URL::asset('assets/images/users/user-dummy-img.jpg') }} @endif"
-                                                        alt="Header Avatar" width="50"></span></div> --}}
                                         <div class="comment-text w-100">
                                             <h5>{{ $item['customer_name'] }}</h5>
                                             <div class="comment-footer">
@@ -1119,7 +762,7 @@
                                             <p class="m-b-5 m-t-10">{{ $item['massage'] }}</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             @endforeach
                         </div>
                     </div>

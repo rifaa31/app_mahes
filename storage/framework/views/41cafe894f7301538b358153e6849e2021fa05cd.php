@@ -41,8 +41,7 @@
                         </div>
                         <?php if(session()->has('success')): ?>
                             <div class="alert alert-info" role="alert">
-                                <?php echo e(session('success')); ?>
-
+                                <?php echo e(session('success')); ?> </div>
                         <?php endif; ?>
                     </div>
                 </div>

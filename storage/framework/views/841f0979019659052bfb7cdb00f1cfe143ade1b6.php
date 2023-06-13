@@ -69,12 +69,10 @@
                                     </div>
                                 </li>
                             </ul>
-                            
 
                         </div>
                         <div class="card-footer">
                             <div class=" d-flex justify-content-between">
-                                
                                 <form onsubmit="return confirm('Apakah anda yakin akan menghapus data ini?');"
                                     action="<?php echo e(route('product.destroy', $item['id'])); ?>" method="POST">
                                     <a href='<?php echo e(route('product.edit', $item['id'])); ?>'
@@ -84,7 +82,6 @@
                                     <?php echo method_field('DELETE'); ?>
                                     <button type="submit" class="btn btn-soft-danger clear-btn">Hapus</button>
                                 </form>
-                                
                             </div>
                         </div>
                     </div>

@@ -17,11 +17,20 @@ class LandingController extends Controller
         $package = Product::paginate()->toArray();
         $package = Product::select('title', 'price', 'description')
             ->where('type', 'package')->get();
+        $additional = Product::paginate()->toArray();
+        $additional = Product::select('title', 'price', 'description')
+            ->where('type', 'additional')->get();
+        $entertainment = Product::paginate()->toArray();
+        $entertainment = Product::select('title', 'price', 'description')
+            ->where('type', 'entertainment')->get();
+        $upacara_adat = Product::paginate()->toArray();
+        $upacara_adat = Product::select('title', 'price', 'description')
+            ->where('type', 'upacara_adat')->get();
         /**
          * pages adalah nama folder
          * schedule adalah nama file
          */
-        return view('pages.landing.index', compact('testimoni', 'package'));
+        return view('pages.landing.index', compact('testimoni', 'package', 'additional', 'entertainment', 'upacara_adat'));
     }
     public function Booknow()
     {
@@ -69,7 +78,7 @@ class LandingController extends Controller
             // return redirect()->to('https://wa.me/+6282316895620');
             // return redirect('https://api.whatsapp.com/send?phone=6282316895620');
             return redirect('https://api.whatsapp.com/send?phone=6282316895620');
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             // return redirect()->back()->with('error', 'Gagal booking');
             return redirect('https://api.whatsapp.com/send?phone=6282316895620/&text=Hello%2C%20Perkenalkan%20nama%20saya%20...%20ingin%20mengkonfimasi%20pembayaran%20booking%20jasa%20Wedding%20Organizer%20Maheswari%20Enterprise.%20atas%20nama%3A%20.....%20sekian%20terimkasih
             ');
