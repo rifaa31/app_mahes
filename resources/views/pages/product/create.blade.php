@@ -42,8 +42,8 @@
                             <option value="package">Package</option>
                             <option value="additional">Additional</option>
                             <option value="entertainment">Musik Entertainment</option>
-                            <option value="equipment">Equipment</option>
                             <option value="upacara_adat">Upacara Adat</option>
+                            <option value="all_package">All Package</option>
                         </select>
                     </div>
                 </div>

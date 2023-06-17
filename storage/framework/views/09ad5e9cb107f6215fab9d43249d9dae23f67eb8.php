@@ -47,14 +47,12 @@
                                 <a class="nav-link fs-15" href="#additional">Additional</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link fs-15" href="#testimoni">Testimoni</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link fs-15" href="#team">Wedding Consultant</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link fs-15" href="#contact">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fs-15" href="#testimonial">Testimonial</a>
-                            </li>
+
                         </ul>
                         <div class="">
                             <a href="<?php echo e(URL::asset('/auth-signup-basic')); ?>" class="btn btn-success">Login</a>
@@ -95,37 +93,37 @@
                                         <img src="<?php echo e(URL::asset('assets/images/landing/img-pattern.png')); ?>"
                                             class="d-block img-fluid" alt="...">
                                     </div>
-                                    <div class="pt-10 mt-12">
-                                        <div class="swiper effect-coverflow-swiper rounded pb-5">
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide">
-                                                    <img src="<?php echo e(URL::asset('assets/images/demos/maheswari1.jpg')); ?>"
-                                                        alt="" class="img-fluid" />
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <img src="<?php echo e(URL::asset('assets/images/demos/maheswari2.jpg')); ?>"
-                                                        alt="" class="img-fluid" />
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <img src="<?php echo e(URL::asset('assets/images/demos/maheswari3.jpg')); ?>"
-                                                        alt="" class="img-fluid" />
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <img src="<?php echo e(URL::asset('assets/images/demos/maheswari4.jpg')); ?>"
-                                                        alt="" class="img-fluid" />
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <img src="<?php echo e(URL::asset('assets/images/demos/maheswari5.jpg')); ?>"
-                                                        alt="" class="img-fluid" />
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <img src="<?php echo e(URL::asset('assets/images/demos/maheswari6.jpg')); ?>"
-                                                        alt="" class="img-fluid" />
-                                                </div>
+
+                                    <div class="swiper effect-coverflow-swiper rounded pb-5">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo e(URL::asset('assets/images/demos/maheswari1.jpg')); ?>"
+                                                    alt="" class="img-fluid" />
                                             </div>
-                                            <div class="swiper-pagination swiper-pagination-dark"></div>
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo e(URL::asset('assets/images/demos/maheswari2.jpg')); ?>"
+                                                    alt="" class="img-fluid" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo e(URL::asset('assets/images/demos/maheswari3.jpg')); ?>"
+                                                    alt="" class="img-fluid" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo e(URL::asset('assets/images/demos/maheswari4.jpg')); ?>"
+                                                    alt="" class="img-fluid" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo e(URL::asset('assets/images/demos/maheswari5.jpg')); ?>"
+                                                    alt="" class="img-fluid" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="<?php echo e(URL::asset('assets/images/demos/maheswari6.jpg')); ?>"
+                                                    alt="" class="img-fluid" />
+                                            </div>
                                         </div>
+                                        <div class="swiper-pagination swiper-pagination-dark"></div>
                                     </div>
+
                                     
                                 </div>
                             </div>
@@ -268,10 +266,9 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="text-center mb-5">
-                                <h3 class="mb-3 fw-semibold">Choose the plan that's right for you</h3>
-                                <p class="text-muted mb-4">Simple pricing. No hidden fees. Advanced features for you
-                                    business.</p>
+                            <div class="text-center mb-3">
+                                <h3 class="mb-3 fw-semibold"> CHOOSE YOUR PACKAGE NOW</h3>
+                                <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu.</p>
                             </div>
                             <!-- end col -->
                         </div>
@@ -335,9 +332,9 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="text-center mb-5">
+                            <div class="text-center mb-3">
                                 <h3 class="mb-3 fw-semibold"> CHOOSE YOUR PACKAGE NOW</h3>
-                                <p class="text-muted mb-4">Pilih Paket yang sesuai dengan Kebutuhan Kamu</p>
+                                <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu</p>
                             </div>
                         </div>
                         <!-- end col -->
@@ -361,28 +358,26 @@
                                                         <h1 class="month"><sup></sup><span
                                                                 class="ff-secondary fw-bold"><?php echo e(number_format($item['price'], 0, '', '.')); ?></span>
                                                     </div>
-                                                    <div class="accordion custom-accordionwithicon"
-                                                        id="genques-accordion">
+
+                                                    <div class="accordion accordion-flush" id="accordionFlushExample">
                                                         <div class="accordion-item">
-                                                            <h2 class="accordion-header" id="genques-headingTwo">
+                                                            <h2 class="accordion-header" id="flush-headingOne">
                                                                 <button class="accordion-button collapsed" type="button"
                                                                     data-bs-toggle="collapse"
-                                                                    data-bs-target="#genques-collapseTwo"
+                                                                    data-bs-target="#flush-collapseOne"
                                                                     aria-expanded="false"
-                                                                    aria-controls="genques-collapseTwo">
+                                                                    aria-controls="flush-collapseOne">
                                                                     Detail Package
                                                                 </button>
                                                             </h2>
-                                                            <div id="genques-collapseTwo"
-                                                                class="accordion-collapse collapse"
-                                                                aria-labelledby="genques-headingTwo"
-                                                                data-bs-parent="#genques-accordion">
-                                                                <div class="accordion-body ff-secondary">
-                                                                    <?php echo $item['description']; ?>
-
-                                                                </div>
+                                                            <div id="flush-collapseOne"
+                                                                class="accordion-collapse collapse show"
+                                                                aria-labelledby="flush-headingOne"
+                                                                data-bs-parent="#accordionFlushExample">
+                                                                <div class="accordion-body"><?php echo $item['description']; ?></div>
                                                             </div>
                                                         </div>
+                                                        
 
                                                         
                                                         
@@ -418,6 +413,7 @@
                         <div class="text-muted">
                             <div class="text-center mb-5">
                                 <h3 class="mb-3 fw-semibold">ADDITIONAL</h3>
+                                <p class="text-muted mb-4">Merupakan Paket Tambahan Jika Diperlukan</p>
                             </div>
                             <div class="row">
                                 <?php $__currentLoopData = $additional; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -515,6 +511,55 @@
         </section>
         <!-- end upacara adat -->
 
+        <!-- start testimonial -->
+        <section class="section bg-primary opacity-75" id="testimoni">
+            <div class="bg-overlay bg-overlay-pattern"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-14">
+                        <div class="text-center">
+                            <div>
+                                <i class="ri-double-quotes-l text-white display-5"></i>
+                            </div>
+                            <h4 class="text-white mb-5">TESTIMONI </h4>
+                            
+
+                            <!-- Swiper -->
+                            <div class="swiper vertical-swiper rounded mb-8" style="height:180px;">
+                                <div class="swiper-wrapper">
+                                    <?php $__currentLoopData = $testimoni['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <div class="swiper-slide">
+                                            <div class="row justify-content-center">
+                                                <div class="col-14">
+                                                    <div class="text-white">
+                                                        <p class="fs-20 ff-secondary mb-4"><?php echo e($item['massage']); ?>
+
+                                                        </p>
+
+                                                        <div>
+                                                            <h5 class="text-white"><?php echo e($item['customer_name']); ?>
+
+                                                            </h5>
+                                                            <p><?php echo e($item['customer_date']); ?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <!-- end slider -->
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+
         <!-- start team -->
         <section class="section bg-soft-primary" id="team">
             <div class="bg-overlay bg-overlay-pattern"></div>
@@ -523,6 +568,8 @@
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
                             <h3 class="mb-3 fw-semibold">WEDDING <span class="text-danger">CONSULTANT</span></h3>
+                            <p class="text-muted mb-4">Kami Siap Memberikan Jasa Konsultasi Mengenai Konsep
+                                Pernikahan Yang Sesuai Dengan Impian Pernikahmu.</p>
                         </div>
                     </div>
                     <!-- end row -->
@@ -533,13 +580,18 @@
                                     <div class="avatar-xl mx-auto mb-4 position-relative">
                                         <img src="<?php echo e(URL::asset('assets/images/users/avatar1.jpg')); ?>" alt=""
                                             class="img-fluid rounded-circle">
-                                        
+                                        <a href='<?php echo e(url('https://wa.me/+6288223453846')); ?>'
+                                            class="btn btn-success btn-sm position-absolute bottom-0 end-0 rounded-circle avatar-xs">
+                                            <div class="avatar-title bg-transparent">
+                                                <i class="ri-chat-3-fill align-bottom"></i>
+                                            </div>
+                                        </a>
                                     </div>
                                     <!-- end card body -->
                                     <h5 class="mb-1"><a href="<?php echo e(URL::asset('/pages-profile')); ?>"
                                             class="text-body">Dedi
                                             wardatul Q</a></h5>
-                                    
+                                    <p class="text-muted mb-0 ff-secondary">Super Crew</p>
                                 </div>
                             </div>
                             <!-- end card -->
@@ -551,12 +603,18 @@
                                     <div class="avatar-xl mx-auto mb-4 position-relative">
                                         <img src="<?php echo e(URL::asset('assets/images/users/avatar2.jpg')); ?>" alt=""
                                             class="img-fluid rounded-circle">
+                                        <a href='<?php echo e(url('https://wa.me/+6289519086447')); ?>'
+                                            class="btn btn-success btn-sm position-absolute bottom-0 end-0 rounded-circle avatar-xs">
+                                            <div class="avatar-title bg-transparent">
+                                                <i class="ri-chat-3-fill align-bottom"></i>
+                                            </div>
+                                        </a>
                                     </div>
                                     <!-- end card body -->
                                     <h5 class="mb-1"><a href="<?php echo e(URL::asset('/pages-profile')); ?>"
                                             class="text-body">Izzal
                                             Tufik N</a></h5>
-                                    
+                                    <p class="text-muted mb-0 ff-secondary">Super Crew</p>
                                 </div>
                             </div>
                             <!-- end card -->
@@ -568,12 +626,18 @@
                                     <div class="avatar-xl mx-auto mb-4 position-relative">
                                         <img src="<?php echo e(URL::asset('assets/images/users/avatar3.jpg')); ?>" alt=""
                                             class="img-fluid rounded-circle">
+                                        <a href='<?php echo e(url('https://wa.me/+6281288605259')); ?>'
+                                            class="btn btn-success btn-sm position-absolute bottom-0 end-0 rounded-circle avatar-xs">
+                                            <div class="avatar-title bg-transparent">
+                                                <i class="ri-chat-3-fill align-bottom"></i>
+                                            </div>
+                                        </a>
                                     </div>
                                     <!-- end card body -->
                                     <h5 class="mb-1"><a href="<?php echo e(URL::asset('/pages-profile')); ?>"
                                             class="text-body">Rifa
                                             Nurfalah</a></h5>
-                                    
+                                    <p class="text-muted mb-0 ff-secondary">Super Crew</p>
                                 </div>
                             </div>
                             <!-- end card -->
@@ -585,11 +649,18 @@
                                     <div class="avatar-xl mx-auto mb-4 position-relative">
                                         <img src="<?php echo e(URL::asset('assets/images/users/avatar4.jpg')); ?>" alt=""
                                             class="img-fluid rounded-circle">
+                                        <a href='<?php echo e(url('https://wa.me/+628982862013')); ?>'
+                                            class="btn btn-success btn-sm position-absolute bottom-0 end-0 rounded-circle avatar-xs">
+                                            <div class="avatar-title bg-transparent">
+                                                <i class="ri-chat-3-fill align-bottom"></i>
+                                            </div>
+                                        </a>
                                     </div>
                                     <!-- end card body -->
                                     <h5 class="mb-1"><a href="<?php echo e(URL::asset('/pages-profile')); ?>"
                                             class="text-body">Didit
                                             Hardiyanto</a></h5>
+                                    <p class="text-muted mb-0 ff-secondary">Super Crew</p>
                                 </div>
                             </div>
                             <!-- end card -->
@@ -608,7 +679,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h3 class="mb-3 fw-semibold">CONTACT</h3>
+                            <h3 class="mb-3 fw-semibold">TENTANG <span class="text-danger">KAMI</span></h3>
+                            <p class="text-muted mb-4">Kenali Kami Lebih dekat</p>
                         </div>
                     </div>
                 </div>
@@ -662,42 +734,8 @@
             <!-- end container -->
         </section>
 
-        <!-- start testimonial -->
-        <section class="section" id="testimonial">
-            <div class="container d-flex justify-content-center mt-100 mb-100">
-                <div class="row">
-                    <div class="text-center mb-5">
-                        <h3 class="mb-3 fw-semibold"> TESTIMONI PENGANTIN</h3>
-                        <p class="text-muted mb-4">Berikut adalah Testimoni Dari Pengantin Yang Telah Menggunakan Jasa
-                            Kami.</p>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card">
-                            <?php $__currentLoopData = $testimoni['data']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="list-group">
-                                    <a href="javascript:void(0);" class="list-group-item list-group-item-action">
-                                        <div class="d-flex mb-2 align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?php echo e(URL::asset('assets/images/users/user-dummy-img.jpg')); ?>"
-                                                     alt=""
-                                                    class="avatar-sm rounded-circle" />
-                                            </div>
-                                            <div class="flex-grow-1 ms-3">
-                                                <h5 class="list-title fs-15 mb-1"><?php echo e($item['customer_name']); ?></h5>
-                                                <p class="list-text mb-0 fs-12"><?php echo e($item['customer_date']); ?></p>
-                                            </div>
-                                        </div>
-                                        <p class="list-text mb-0"><?php echo e($item['massage']); ?></p>
-                                    </a>
-                                </div>
 
-                                
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!-- end testimonial -->
 
         <!-- Start footer -->
@@ -729,6 +767,12 @@
         <script src="<?php echo e(URL::asset('assets/js/pages/gmaps.init.js')); ?>"></script>
         <script src="<?php echo e(URL::asset('/assets/js/app.min.js')); ?>"></script>
         <script src="<?php echo e(URL::asset('/assets/js/pages/swiper.init.js')); ?>"></script>
+        <!--Swiper slider css-->
+        <link href="<?php echo e(URL::asset('build/libs/swiper/swiper-bundle.min.css')); ?>" rel="stylesheet" type="text/css" />
+        <!--Swiper slider js-->
+        <script src="<?php echo e(URL::asset('build/libs/swiper/swiper-bundle.min.js')); ?>"></script>
+        <!-- swiper.init js -->
+        <script src="<?php echo e(URL::asset('build/js/pages/swiper.init.js')); ?>"></script>
     <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\applications\maheswari-app\resources\views/pages/landing/index.blade.php ENDPATH**/ ?>

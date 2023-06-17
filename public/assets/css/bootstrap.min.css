@@ -95,7 +95,7 @@ body {
     line-height: var(--vz-body-line-height);
     color: var(--vz-body-color);
     text-align: var(--vz-body-text-align);
-    background-color: var(--vz-body-bg);
+    background-color: #f1f1f1;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
@@ -338,7 +338,7 @@ figure {
 
 img,
 svg {
-    vertical-align: middle
+    vertical-align: text-top
 }
 
 table {

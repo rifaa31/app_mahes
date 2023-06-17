@@ -31,7 +31,7 @@ class ProductController extends Controller
     {
         try {
             $imageName = "";
-            $data = $request->only(['title', 'price', 'description', 'image', 'type']);
+            $data = $request->only(['title', 'price', 'description', "image", 'type']);
 
             if (!empty($request->image)) {
                 $imageName = time() . '.' . $request->image->extension();
@@ -48,7 +48,7 @@ class ProductController extends Controller
 
             Product::create($data);
             return redirect()->route('product.index')->with('success', 'Produk Berhasil ditambahkan');
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Error');
         }
     }

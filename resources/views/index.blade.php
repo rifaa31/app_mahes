@@ -75,23 +75,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="d-flex justify-content-end mt-3">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
 
-                            @foreach ($booking['links'] as $item)
-                                @php
-                                    $label = $item['label'] == 'pagination.previous' ? 'Previous' : ($item['label'] == 'pagination.next' ? 'Next' : $item['label']);
-                                @endphp
-
-                                <li class="page-item"><a class="page-link {{ $item['active'] == true ? 'active' : '' }}"
-                                        href="{{ $item['url'] }}">{{ $label }}</a>
-                                </li>
-                            @endforeach
-
-                        </ul>
-                    </nav>
-                </div> --}}
             </div>
         </div>
     @endsection
@@ -261,25 +245,4 @@
                 toastr.success(message, 'Event');
             }
         </script>
-
-        {{-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                events: [],
-                selectOverlap: function(event) {
-                    return event.rendering === 'background';
-                }
-            });
-
-            calendar.render();
-        });
-    </script> --}}
     @endsection

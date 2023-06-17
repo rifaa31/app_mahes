@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('price');
-            $table->enum('type', ['package', 'equipment', 'additional', 'entertainment', 'upacara_adat']);
+            $table->enum('type', ['package', 'all_package', 'additional', 'entertainment', 'upacara_adat']);
             $table->string('description');
             $table->timestamps();
         });

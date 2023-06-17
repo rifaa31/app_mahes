@@ -3,9 +3,9 @@
     <!-- LOGO -->
     <div class="navbar-brand-box">
         <!-- Dark Logo-->
-        <a href="index" class="logo logo-dark">
+        <a href="index" class="logo logo-dark mb-3">
             <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo-mhs.png') }}" alt="" height="50">
+                <img src="{{ URL::asset('assets/images/logo-mhs.png') }}" alt="" height="40">
             </span>
             <span class="logo-lg">
                 <img src="{{ URL::asset('assets/images/logo-maheswari.png') }}" alt="" height="50">

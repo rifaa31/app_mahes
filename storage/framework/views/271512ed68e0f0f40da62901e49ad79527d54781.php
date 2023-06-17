@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     <?php $__env->stopSection(); ?>
@@ -244,8 +244,6 @@
                 toastr.success(message, 'Event');
             }
         </script>
-
-        
     <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\applications\maheswari-app\resources\views/index.blade.php ENDPATH**/ ?>
