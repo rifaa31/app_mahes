@@ -488,7 +488,7 @@
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img class="rounded-start img-fluid h-100 object-cover"
-                                                    src="{{ URL::asset('assets/images/small/music1.jpg') }}"
+                                                    src="{{ asset('storage/' . $item->image) }}"
                                                     class="img-fluid rounded-start" alt="Card image">
                                             </div>
                                             <div class="col-md-8">

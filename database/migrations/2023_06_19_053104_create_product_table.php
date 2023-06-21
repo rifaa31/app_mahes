@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('price');
             $table->enum('type', ['package', 'all_package', 'additional', 'entertainment', 'upacara_adat']);
             $table->string('description');
+            $table->string('image');
             $table->timestamps();
         });
     }

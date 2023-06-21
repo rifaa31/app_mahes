@@ -34,16 +34,23 @@ class ProductController extends Controller
             $data = $request->only(['title', 'price', 'description', "image", 'type']);
 
             if (!empty($request->image)) {
-                $imageName = time() . '.' . $request->image->extension();
-                $request->image->move(public_path('images'), $imageName);
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->extension();
+                $image->move(public_path('storage'), $imageName);
+
+                // $imageName = time() . '.' . $request->image->extension();
+                // $request->image->move(public_path('images'), $imageName);
             }
-            $validator = Validator::make($data, ['title' => 'required', 'price' => 'numeric', 'description' => 'required'], ['title.required' => 'tidak boleh kosong', 'price.numeric' => 'harus bertype angka', 'description.required' => 'deskripsi tidak boleh kosong']);
+            $validator = Validator::make($data, ['title' => 'required', 'price' => 'numeric', 'description' => 'required'],
+                ['title.required' => 'tidak boleh kosong',
+                    'price.numeric' => 'harus bertype angka',
+                    'description.required' => 'deskripsi tidak boleh kosong']);
 
             if ($validator->fails()) {
                 return redirect()->back()->with('error', 'error simpan');
             }
             if (!empty($imageName)) {
-                $data['image'] = $imageName;
+                $data['storage'] = $imageName;
             }
 
             Product::create($data);

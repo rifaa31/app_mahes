@@ -17,19 +17,20 @@ class LandingController extends Controller
         $package = Product::paginate()->toArray();
         $package = Product::select('title', 'price', 'description')
             ->where('type', 'package')->get();
-        $additional = Product::paginate()->toArray();
-        $additional = Product::select('title', 'price', 'description')
+        // $additional = Product::paginate()->toArray();
+        $additional = Product::select('title', 'price', 'description', 'image')
             ->where('type', 'additional')->get();
-        $entertainment = Product::paginate()->toArray();
-        $entertainment = Product::select('title', 'price', 'description')
+        // $entertainment = Product::paginate()->toArray();
+        $entertainment = Product::select('title', 'price', 'description', 'image')
             ->where('type', 'entertainment')->get();
-        $upacara_adat = Product::paginate()->toArray();
+        // $upacara_adat = Product::paginate()->toArray();
         $upacara_adat = Product::select('title', 'price', 'description')
             ->where('type', 'upacara_adat')->get();
         /**
          * pages adalah nama folder
          * schedule adalah nama file
          */
+
         return view('pages.landing.index', compact('testimoni', 'package', 'additional', 'entertainment', 'upacara_adat'));
     }
     public function Booknow()
