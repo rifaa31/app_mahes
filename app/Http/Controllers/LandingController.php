@@ -14,7 +14,9 @@ class LandingController extends Controller
     {
         $uri = $request->route()->getPrefix();
         $testimoni = Testimoni::paginate()->toArray();
-        $package = Product::paginate()->toArray();
+        $all_package = Product::select('title', 'price', 'description')
+            ->where('type', 'all_package')->get();
+        // $package = Product::paginate()->toArray();
         $package = Product::select('title', 'price', 'description')
             ->where('type', 'package')->get();
         // $additional = Product::paginate()->toArray();
@@ -31,7 +33,7 @@ class LandingController extends Controller
          * schedule adalah nama file
          */
 
-        return view('pages.landing.index', compact('testimoni', 'package', 'additional', 'entertainment', 'upacara_adat'));
+        return view('pages.landing.index', compact('testimoni', 'all_package', 'package', 'additional', 'entertainment', 'upacara_adat'));
     }
     public function Booknow()
     {
@@ -75,13 +77,11 @@ class LandingController extends Controller
             }
 
             DB::table('booking_detail')->insert($payloadItem);
-            // return redirect('landing')->with('success', 'Data Pemesanan Berhasil Disimpan');
-            // return redirect()->to('https://wa.me/+6282316895620');
-            // return redirect('https://api.whatsapp.com/send?phone=6282316895620');
-            return redirect('https://api.whatsapp.com/send?phone=6282316895620');
+            return redirect('https://api.whatsapp.com/send?phone=6281901073574/&text=Hallo%2C%20Perkenalkan%20nama%20saya%20...%20ingin%20mengkonfimasi%20pembayaran%20booking%20jasa%20Wedding%20Organizer%20Maheswari%20Enterprise.%20atas%20nama%3A%20.....%20sekian%20terimkasih
+            ');
         } catch (\Throwable $th) {
             // return redirect()->back()->with('error', 'Gagal booking');
-            return redirect('https://api.whatsapp.com/send?phone=6282316895620/&text=Hello%2C%20Perkenalkan%20nama%20saya%20...%20ingin%20mengkonfimasi%20pembayaran%20booking%20jasa%20Wedding%20Organizer%20Maheswari%20Enterprise.%20atas%20nama%3A%20.....%20sekian%20terimkasih
+            return redirect('https://api.whatsapp.com/send?phone=6281901073574/&text=Hallo%2C%20Perkenalkan%20nama%20saya%20...%20ingin%20mengkonfimasi%20pembayaran%20booking%20jasa%20Wedding%20Organizer%20Maheswari%20Enterprise.%20atas%20nama%3A%20.....%20sekian%20terimkasih
             ');
         }
     }

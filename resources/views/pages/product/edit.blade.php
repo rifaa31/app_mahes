@@ -11,6 +11,19 @@
         @endslot
     @endcomponent
 
+    <div>
+        @if (session()->has('success'))
+            <div class="alert alert-info" role="alert">
+                {{ session('success') }}
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-error" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
+    </div>
+
     <div class="row">
         <div class="col-lg-12 mb-2 ">
             <div class="align-items-center d-flex">
@@ -42,12 +55,7 @@
                             class="text-danger">*</span></label>
                     <div class="col-sm-9">
                         <select class="form-select" name="type" id="type">
-                            <option value="{{ $product['type'] }}">Jenis Produk</option>
-                            <option value="package">Package</option>
-                            <option value="equipment">Equipment</option>
-                            <option value="additional">Additional</option>
-                            <option value="entertaiment">Music Entertainment</option>
-                            <option value="updat">Upacara Adat</option>
+                            <option value="{{ $product['id'] }}">{{ $product['type'] }}</option>
                         </select>
                     </div>
                 </div>
@@ -55,6 +63,7 @@
                     <label for="summernote" class="col-sm-3 col-form-label">Deskripsi Produk <span
                             class="text-danger">*</span></label>
                     <div class="col-sm-9">
+                        {{-- {{ Form::textarea('description', {{ $product['description'] }} ) }} --}}
                         <textarea id="summernote" name="description" type="text" class="form-control" style="height: 100px"
                             id="floatingTextarea" value="{{ $product['description'] }}"></textarea>
                     </div>

@@ -34,11 +34,12 @@
             <ul class="navbar-nav" id="navbar-nav">
                 <!-- start Dashboard Menu -->
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('/*') ? 'active font-weight-bolder' : '' }}"
-                        href="/">
+                    <a class="nav-link {{ request()->routeIs('dashboard*') ? 'active font-weight-bolder' : '' }}"
+                        href="/dashboard">
                         <i data-feather="home" class="icon-dual"></i> <span>@lang('Dashboards')</span>
                     </a>
                 </li>
+
                 <!-- start booking Menu -->
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('booking*') ? 'active font-weight-bolder' : '' }}"

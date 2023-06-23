@@ -13352,7 +13352,7 @@ span.flatpickr-weekday {
 .auth-one-bg .shape>svg {
     width: 100%;
     height: auto;
-    fill: var(--vz-body-bg)
+    fill: #f1f1f1;
 }
 
 .auth-pass-inputgroup input[type=text]+.btn .ri-eye-fill:before {
@@ -16723,7 +16723,7 @@ span.flatpickr-weekday {
 }
 
 .nft-hero {
-    background-image: url(../images/nft/bg-home.jpg);
+    background-image: url(../images/nft/mhs2.jpg);
     background-size: cover;
     background-position: bottom;
     padding: 222px 0 150px

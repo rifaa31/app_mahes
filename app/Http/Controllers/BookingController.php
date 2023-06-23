@@ -25,26 +25,25 @@ class BookingController extends Controller
 
     public function create(Request $request)
     {
-
+        $all_package = Product::where('type', 'all_package')->get()->toArray();
         $package = Product::where('type', 'package')->get()->toArray();
         $additional = Product::where('type', 'additional')->get()->toArray();
         $entertainment = Product::where('type', 'entertainment')->get()->toArray();
-        $equipment = Product::where('type', 'equipment')->get()->toArray();
         $upacara_adat = Product::where('type', 'upacara_adat')->get()->toArray();
         $id = isset($request->id) ? $request->id : '';
-        return view('pages.booking.create', compact('package', 'additional', 'entertainment', 'equipment', 'upacara_adat', 'id'));
+        return view('pages.booking.create', compact('all_package', 'package', 'additional', 'entertainment', 'equipment', 'upacara_adat', 'id'));
     }
 
     public function edit(Request $request)
     {
         // $booking = Booking::findOrFail($id);
+        $all_package = Product::where('type', 'all_package')->get()->toArray();
         $package = Product::where('type', 'package')->get()->toArray();
         $additional = Product::where('type', 'additional')->get()->toArray();
         $entertainment = Product::where('type', 'entertainment')->get()->toArray();
-        $equipment = Product::where('type', 'equipment')->get()->toArray();
         $upacara_adat = Product::where('type', 'upacara_adat')->get()->toArray();
         $id = isset($request->id) ? $request->id : '';
-        return view('pages.booking.edit', compact('package', 'additional', 'entertainment', 'equipment', 'upacara_adat', 'id'));
+        return view('pages.booking.edit', compact('all_package', 'package', 'additional', 'entertainment', 'equipment', 'upacara_adat', 'id'));
 
     }
 
@@ -138,7 +137,7 @@ class BookingController extends Controller
                 DB::table('booking_detail')->insert($payloadItem);
             }
             return redirect('booking')->with('success', 'Data Pemesanan Berhasil Disimpan');
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             dd($th->getMessage());
             return redirect()->back()->with('error', 'gagal ditambahkan');
         }
@@ -211,7 +210,7 @@ class BookingController extends Controller
             }
             $query = Booking::where('id', $id)->update($data);
             return redirect('booking')->with('success', 'Data Pemesanan Berhasil Disimpan');
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             dd($th->getMessage());
             return redirect()->back()->with('error', 'gagal ditambahkan');
         }
@@ -248,7 +247,7 @@ class BookingController extends Controller
             $action_update = $booking->update(['status' => 'waiting', 'total_payment' => $data_booking->total_payment * 2]);
             return redirect()->route('booking.index')->with('success', 'Berhasil Konfirmasi Pembayaran');
 
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'gagal');
         }
     }
@@ -258,7 +257,7 @@ class BookingController extends Controller
         try {
             $data = Booking::where('id', $id)->delete();
             return response()->json(['code' => 200, 'success' => 'sukses', 'data' => $data]);
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             return response()->json(['code' => 400, 'success' => $th->getMessage(), 'data' => []], 400);
         }
     }
@@ -270,7 +269,7 @@ class BookingController extends Controller
             $booking = Booking::with(['bookingDetail.product'])->where('id', $id)->first();
 
             return response()->json(['code' => 200, 'message' => 'sukses', 'data' => $booking]);
-        } catch (\Throwable$th) {
+        } catch (\Throwable $th) {
             return response()->json(['code' => 200, 'message' => $th->getMessage(), 'data' => []]);
 
         }

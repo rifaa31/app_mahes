@@ -34,11 +34,12 @@
             <ul class="navbar-nav" id="navbar-nav">
                 <!-- start Dashboard Menu -->
                 <li class="nav-item">
-                    <a class="nav-link <?php echo e(request()->routeIs('/*') ? 'active font-weight-bolder' : ''); ?>"
-                        href="/">
+                    <a class="nav-link <?php echo e(request()->routeIs('dashboard*') ? 'active font-weight-bolder' : ''); ?>"
+                        href="/dashboard">
                         <i data-feather="home" class="icon-dual"></i> <span><?php echo app('translator')->get('Dashboards'); ?></span>
                     </a>
                 </li>
+
                 <!-- start booking Menu -->
                 <li class="nav-item">
                     <a class="nav-link <?php echo e(request()->routeIs('booking*') ? 'active font-weight-bolder' : ''); ?>"

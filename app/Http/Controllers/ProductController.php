@@ -31,15 +31,16 @@ class ProductController extends Controller
     {
         try {
             $imageName = "";
-            $data = $request->only(['title', 'price', 'description', "image", 'type']);
+            $data = $request->only(['title', 'price', 'description', 'type', 'image']);
 
             if (!empty($request->image)) {
-                $image = $request->file('image');
-                $imageName = time() . '.' . $image->extension();
-                $image->move(public_path('storage'), $imageName);
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('storage/images'), $imageName);
 
-                // $imageName = time() . '.' . $request->image->extension();
-                // $request->image->move(public_path('images'), $imageName);
+                // $image = $request->file('image');
+                // $imageName = time() . '.' . $image->extension();
+                // $image->move(public_path('storage'), $imageName);
+
             }
             $validator = Validator::make($data, ['title' => 'required', 'price' => 'numeric', 'description' => 'required'],
                 ['title.required' => 'tidak boleh kosong',
@@ -50,7 +51,7 @@ class ProductController extends Controller
                 return redirect()->back()->with('error', 'error simpan');
             }
             if (!empty($imageName)) {
-                $data['storage'] = $imageName;
+                $data['image'] = $imageName;
             }
 
             Product::create($data);

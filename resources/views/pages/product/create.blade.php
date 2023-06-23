@@ -11,6 +11,19 @@
         @endslot
     @endcomponent
 
+    <div>
+        @if (session()->has('success'))
+            <div class="alert alert-info" role="alert">
+                {{ session('success') }}
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-error" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
+    </div>
+
     <div class="row">
         <div class="col-lg-12 mb-2 ">
             <div class="align-items-center d-flex">
@@ -34,12 +47,12 @@
                     </div>
                 </div>
                 <div class="form-group row mb-2">
-                    <label for="disabledSelect" class="col-sm-3 col-form-label">jenis Produk <span
+                    <label for="disabledSelect" class="col-sm-3 col-form-label">Jenis Produk <span
                             class="text-danger">*</span></label>
                     <div class="col-sm-9">
                         <select class="form-select" name="type" id="disabledSelect">
-                            <option value="">Jenis Produk</option>
-                            <option value="package">Package</option>
+                            <option value="package">Jenis Produk</option>
+                            <option value="all_package">All Package</option>
                             <option value="additional">Additional</option>
                             <option value="entertainment">Musik Entertainment</option>
                             <option value="upacara_adat">Upacara Adat</option>

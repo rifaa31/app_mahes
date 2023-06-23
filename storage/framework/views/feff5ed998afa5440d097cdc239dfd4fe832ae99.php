@@ -41,12 +41,7 @@
                             class="text-danger">*</span></label>
                     <div class="col-sm-9">
                         <select class="form-select" name="type" id="type">
-                            <option value="<?php echo e($product['type']); ?>">Jenis Produk</option>
-                            <option value="package">Package</option>
-                            <option value="equipment">Equipment</option>
-                            <option value="additional">Additional</option>
-                            <option value="entertaiment">Music Entertainment</option>
-                            <option value="updat">Upacara Adat</option>
+                            <option value="<?php echo e($product['id']); ?>"><?php echo e($product['type']); ?></option>
                         </select>
                     </div>
                 </div>

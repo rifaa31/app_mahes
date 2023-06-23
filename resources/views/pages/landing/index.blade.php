@@ -19,13 +19,13 @@
     @section('content')
         <!-- Begin page -->
         <div class="layout-wrapper landing">
-            <nav class="navbar navbar-expand-lg navbar-landing fixed-top" id="navbar">
+            <nav class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top" id="navbar">
                 <div class="container">
                     <a class="navbar-brand" href="{{ URL::asset('/index') }}">
                         <img src="{{ URL::asset('assets/images/logo-maheswari.png') }}" class="card-logo card-logo-dark"
                             alt="logo dark" height="50">
-                        <img src="{{ URL::asset('assets/images/logo-light.png') }}" class="card-logo card-logo-light"
-                            alt="logo light" height="30">
+                        <img src="{{ URL::asset('assets/images/logo-maheswari.png') }}" class="card-logo card-logo-light"
+                            alt="logo light" height="50">
                     </a>
                     <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -55,17 +55,46 @@
                             </li>
 
                         </ul>
-                        <div class="">
+                        {{-- <div class="">
                             <a href="{{ URL::asset('/auth-signup-basic') }}" class="btn btn-success">Login</a>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
             </nav>
+            <div class="bg-overlay bg-overlay-pattern"></div>
             <!-- end navbar -->
+            <!-- start hero section -->
+            <section class="section nft-hero" id="home">
+                <div class="bg-overlay"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-sm-10">
+                            <div class="text-center">
+                                <h1 class="display-4 fw-medium mb-4 lh-base text-white">Wujudkan Impian Pernikahanmu bersama
+                                    <span class="text-success">Maheswari Enterprise</span>
+                                </h1>
+                                <p class="lead text-white-50 lh-base mb-4 pb-2">Memberikan jasa pelayanan/ Wedding Organizer
+                                    terbaik dan
+                                    terstruktur. Sudah berpengalaman dan profesional dalam menyelenggarakan Event
+                                    Pernikahan baik Indoor atau Outdoor, Pernikahan Tradisional, Nasional dan Internasional
+                                    yang kami kemas sesuai dengan permintaan dan pengimplementasian yang Epic.</p>
+
+                                <div class="hstack gap-2 justify-content-center">
+                                    <a href='{{ route('landing.booknow') }}' class="btn btn-primary">Book Now <i
+                                            class="ri-arrow-right-line align-middle ms-1"></i></a>
+                                    <a href="#package" class="btn btn-danger">View Package <i
+                                            class="ri-eye-line align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </section><!-- end hero section -->
 
             <!-- start hero section -->
-            <section class="section pb-0 hero-section" id="home">
+            {{-- <section class="section pb-0 hero-section" id="home">
                 <div class="bg-overlay bg-overlay-pattern"></div>
                 <div class="container">
                     <div class="row justify-content-center">
@@ -124,22 +153,11 @@
                                         </div>
                                         <div class="swiper-pagination swiper-pagination-dark"></div>
                                     </div>
-
-                                    {{-- <div class="carousel slide carousel-fade" data-bs-ride="carousel">
-                                        <div class="carousel-inner shadow-lg p-2 bg-white rounded">
-                                            <div class="carousel-item active" data-bs-interval="2000">
-                                                <img src="{{ URL::asset('assets/images/demos/mahes.jpg') }}"
-                                                    class="d-block w-100" alt="...">
-                                            </div>
-                                        </div>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- end row -->
                 </div>
-                <!-- end container -->
                 <div class="position-absolute start-0 end-0 bottom-0 hero-shape-svg">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
                         viewBox="0 0 1440 120">
@@ -149,8 +167,7 @@
                         </g>
                     </svg>
                 </div>
-                <!-- end shape -->
-            </section>
+            </section> --}}
 
             <!-- start services -->
             <section class="section" id="services">
@@ -165,192 +182,436 @@
                             </div>
                         </div>
                         <!-- end row -->
+                        <div class="swiper effect-coverflow-swiper rounded pb-5">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="{{ URL::asset('assets/images/demos/mhss1.jpeg') }}" alt=""
+                                        class="img-fluid" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ URL::asset('assets/images/demos/mhss2.jpeg') }}" alt=""
+                                        class="img-fluid" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ URL::asset('assets/images/demos/mhss3.jpeg') }}" alt=""
+                                        class="img-fluid" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ URL::asset('assets/images/demos/mhss4.jpeg') }}" alt=""
+                                        class="img-fluid" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ URL::asset('assets/images/demos/mhss5.jpeg') }}" alt=""
+                                        class="img-fluid" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ URL::asset('assets/images/demos/mhss6.jpeg') }}" alt=""
+                                        class="img-fluid" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ URL::asset('assets/images/demos/mhss7.jpeg') }}" alt=""
+                                        class="img-fluid" />
+                                </div>
+                            </div>
+                            <div class="swiper-pagination swiper-pagination-dark"></div>
+                        </div>
+                    </div>
 
-                        <div class="row g-3">
-                            <div class="col-lg-4">
-                                <div class="d-flex p-3">
-                                    <div class="flex-shrink-0 me-3">
-                                        <div class="avatar-sm icon-effect">
-                                            <div class="avatar-title bg-transparent text-success rounded-circle">
-                                                <i class="ri-pencil-ruler-2-line fs-36"></i>
-                                            </div>
+                    <div class="row g-3">
+                        <div class="col-lg-4">
+                            <div class="d-flex p-3">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="avatar-sm icon-effect">
+                                        <div class="avatar-title bg-transparent text-success rounded-circle">
+                                            <i class="ri-pencil-ruler-2-line fs-36"></i>
                                         </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5 class="fs-18">Creative Thinking</h5>
-                                        <p class="text-muted my-3 ff-secondary">Ide gagsan kreatif yang kami suguhkan
-                                            akan
-                                            menjadi hal yang tak terlupakan dalam momen sakral sekali seumur hidup.</p>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-4">
-                                <div class="d-flex p-3">
-                                    <div class="flex-shrink-0 me-3">
-                                        <div class="avatar-sm icon-effect">
-                                            <div class="avatar-title bg-transparent text-success rounded-circle">
-                                                <i class="ri-palette-line fs-36"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5 class="fs-18">Young</h5>
-                                        <p class="text-muted my-3 ff-secondary">Crew Muda dan Semangat yang akan terjun
-                                            langsung
-                                            membawa acara berkesan di era millenial. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-4">
-                                <div class="d-flex p-3">
-                                    <div class="flex-shrink-0 me-3">
-                                        <div class="avatar-sm icon-effect">
-                                            <div class="avatar-title bg-transparent text-success rounded-circle">
-                                                <i class="ri-briefcase-5-line fs-36"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5 class="fs-18">Zuper Team</h5>
-                                        <p class="text-muted my-3 ff-secondary">Koordinasi dan Konsolidasi yang
-                                            kontinyu
-                                            antara
-                                            Team dan Pihak Terkait membuat acara terintegrasi dengan baik. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-4">
-                                <div class="d-flex p-3">
-                                    <div class="flex-shrink-0 me-3">
-                                        <div class="avatar-sm icon-effect">
-                                            <div class="avatar-title bg-transparent text-success rounded-circle">
-                                                <i class="ri-lightbulb-flash-line fs-36"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5 class="fs-18">Innovate Ideas</h5>
-                                        <p class="text-muted my-3 ff-secondary">Kami terus berupaya mengikuti trend
-                                            masa
-                                            kini
-                                            dan selera pasar tanpa mengurangi nilai-nilai luhur pernikahan.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-4">
-                                <div class="d-flex p-3">
-                                    <div class="flex-shrink-0 me-3">
-                                        <div class="avatar-sm icon-effect">
-                                            <div class="avatar-title bg-transparent text-success rounded-circle">
-                                                <i class="ri-settings-2-line fs-36"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5 class="fs-18">Problem Solving</h5>
-                                        <p class="text-muted my-3 ff-secondary">Dengan jam Terbang dan Wawasan membuat
-                                            kami
-                                            handal dan berpengalaman dalam menghadapi kendala dengan strategi Plan B dan
-                                            Plan C.
-                                        </p>
-                                    </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-18">Creative Thinking</h5>
+                                    <p class="text-muted my-3 ff-secondary">Ide gagsan kreatif yang kami suguhkan
+                                        akan
+                                        menjadi hal yang tak terlupakan dalam momen sakral sekali seumur hidup.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- end col -->
+                        <div class="col-lg-4">
+                            <div class="d-flex p-3">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="avatar-sm icon-effect">
+                                        <div class="avatar-title bg-transparent text-success rounded-circle">
+                                            <i class="ri-palette-line fs-36"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-18">Young</h5>
+                                    <p class="text-muted my-3 ff-secondary">Crew Muda dan Semangat yang akan terjun
+                                        langsung
+                                        membawa acara berkesan di era millenial. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-4">
+                            <div class="d-flex p-3">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="avatar-sm icon-effect">
+                                        <div class="avatar-title bg-transparent text-success rounded-circle">
+                                            <i class="ri-briefcase-5-line fs-36"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-18">Zuper Team</h5>
+                                    <p class="text-muted my-3 ff-secondary">Koordinasi dan Konsolidasi yang
+                                        kontinyu
+                                        antara
+                                        Team dan Pihak Terkait membuat acara terintegrasi dengan baik. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-4">
+                            <div class="d-flex p-3">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="avatar-sm icon-effect">
+                                        <div class="avatar-title bg-transparent text-success rounded-circle">
+                                            <i class="ri-lightbulb-flash-line fs-36"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-18">Innovate Ideas</h5>
+                                    <p class="text-muted my-3 ff-secondary">Kami terus berupaya mengikuti trend
+                                        masa
+                                        kini
+                                        dan selera pasar tanpa mengurangi nilai-nilai luhur pernikahan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-lg-4">
+                            <div class="d-flex p-3">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="avatar-sm icon-effect">
+                                        <div class="avatar-title bg-transparent text-success rounded-circle">
+                                            <i class="ri-settings-2-line fs-36"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fs-18">Problem Solving</h5>
+                                    <p class="text-muted my-3 ff-secondary">Dengan jam Terbang dan Wawasan membuat
+                                        kami
+                                        handal dan berpengalaman dalam menghadapi kendala dengan strategi Plan B dan
+                                        Plan C.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+        </div>
+        <!-- end container -->
+        </section>
+        <!-- end services -->
+
+        <!-- start plan -->
+        <section class="section bg-light" id="categories">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="text-center mb-5">
+                            <h2 class="mb-3 fw-semibold lh-base">Trending All Categories</h2>
+                            <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the
+                                process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a
+                                software developer.</p>
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper pb-4">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row g-1 mb-3">
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-06.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-2.gif') }}"
+                                                        alt="" class="img-fluid rounded mt-1">
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-5.gif') }}"
+                                                        alt="" class="img-fluid rounded mb-1">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-03.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <a href="#!" class="float-end"> View All <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                            <h5 class="mb-0 fs-16"><a href="#!">Artwork <span
+                                                        class="badge badge-soft-success">206</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row g-1 mb-3">
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-05.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-1.gif') }}"
+                                                        alt="" class="img-fluid rounded mt-1">
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-4.gif') }}"
+                                                        alt="" class="img-fluid rounded mb-1">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-04.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <a href="#!" class="float-end"> View All <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                            <h5 class="mb-0 fs-16"><a href="#!">Crypto Card <span
+                                                        class="badge badge-soft-success">743</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row g-1 mb-3">
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-02.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-3.gif') }}"
+                                                        alt="" class="img-fluid rounded mt-1">
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-1.gif') }}"
+                                                        alt="" class="img-fluid rounded mb-1">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-01.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <a href="#!" class="float-end"> View All <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                            <h5 class="mb-0 fs-16"><a href="#!">Music <span
+                                                        class="badge badge-soft-success">679</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row g-1 mb-3">
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-03.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-5.gif') }}"
+                                                        alt="" class="img-fluid rounded mt-1">
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-2.gif') }}"
+                                                        alt="" class="img-fluid rounded mb-1">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-05.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <a href="#!" class="float-end"> View All <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                            <h5 class="mb-0 fs-16"><a href="#!">Games <span
+                                                        class="badge badge-soft-success">341</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row g-1 mb-3">
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-02.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-3.gif') }}"
+                                                        alt="" class="img-fluid rounded mt-1">
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-6">
+                                                    <img src="{{ URL::asset('assets/images/nft/gif/img-1.gif') }}"
+                                                        alt="" class="img-fluid rounded mb-1">
+                                                    <img src="{{ URL::asset('assets/images/nft/img-01.jpg') }}"
+                                                        alt="" class="img-fluid rounded">
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                            <a href="#!" class="float-end"> View All <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                            <h5 class="mb-0 fs-16"><a href="#!">Photography <span
+                                                        class="badge badge-soft-success">1452</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination swiper-pagination-dark"></div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </section>
+        <!-- end plan -->
+
+        <section class="section bg-white" id="package">
+            {{-- <div class="bg-overlay bg-overlay-pattern"></div> --}}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center">
+                            <h3 class="mb-3 fw-semibold"> All PACKAGE MAHESWARI</h3>
+                            <p class="text-muted mb-4">Professional Wedding Planner & Services</p>
+                        </div>
+                        <!-- end col -->
                     </div>
                     <!-- end row -->
+
+                    <div class="row gy-4">
+                        @foreach ($all_package as $item)
+                            <div class="col-lg-4">
+                                <div class="card plan-box mb-0">
+                                    <div class="card-body p-4 m-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="mb-1 fw-semibold">{{ $item['title'] }}</h5>
+                                                <p class="text-muted mb-0">For Startup</p>
+                                            </div>
+                                            <div class="avatar-sm">
+                                                <div class="avatar-title bg-light rounded-circle text-primary">
+                                                    <i class="ri-book-mark-line fs-20"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 text-center">
+                                            <h1 class="month"><sup><small>$</small></sup><span
+                                                    class="ff-secondary fw-bold">19</span> <span
+                                                    class="fs-13 text-muted">/Month</span></h1>
+                                        </div>
+
+                                        <div>
+                                            <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
+                                                <li>
+                                                    <div class="d-flex">
+                                                        <div class="flex-shrink-0 text-success me-1">
+                                                            <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            Upto <b>3</b> Projects
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="mt-4">
+                                                <a href="javascript:void(0);" class="btn btn-soft-success w-100">Get
+                                                    Started</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col-->
+                        @endforeach
+                    </div>
+
+                    <!--end row-->
                 </div>
                 <!-- end container -->
-            </section>
-            <!-- end services -->
+        </section>
 
-            <section class="section bg-light" id="plans">
-                <div class="bg-overlay bg-overlay-pattern"></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="text-center mb-3">
-                                <h3 class="mb-3 fw-semibold"> CHOOSE YOUR PACKAGE NOW</h3>
-                                <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu.</p>
-                            </div>
-                            <!-- end col -->
+        <!-- start plan -->
+        <section class="section bg-light" id="">
+            <div class="bg-overlay bg-overlay-pattern"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-3">
+                            <h3 class="mb-3 fw-semibold"> ONLY MAHESWARI SERVICES PACKAGE</h3>
+                            <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu</p>
                         </div>
-                        <!-- end row -->
-
-                        <div class="row gy-4">
-                            @foreach ($package as $item)
-                                <div class="col-lg-4">
-                                    <div class="card plan-box mb-0">
-                                        <div class="card-body p-4 m-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-grow-1">
-                                                    <h5 class="mb-1 fw-semibold">{{ $item['title'] }}</h5>
-                                                    <p class="text-muted mb-0">For Startup</p>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+                <div class="swiper paket " dir="ltr">
+                    <div class="swiper-wrapper">
+                        @foreach ($package as $item)
+                            <div class="swiper-slide">
+                                <div class="row">
+                                    <div class="col-lg-12 justify-content-between">
+                                        <div class="card plan-box mb-0">
+                                            <div class="card-body p-4 m-2">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="mb-1 fw-semibold">{{ $item['title'] }}</h5>
+                                                        <p class="text-muted mb-0">Starting From</p>
+                                                    </div>
                                                 </div>
-                                                <div class="avatar-sm">
-                                                    <div class="avatar-title bg-light rounded-circle text-primary">
-                                                        <i class="ri-book-mark-line fs-20"></i>
+                                                <div class="py-4 text-center">
+                                                    <h1 class="month"><sup></sup><span
+                                                            class="ff-secondary fw-bold">{{ number_format($item['price'], 0, '', '.') }}</span>
+                                                </div>
+
+                                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingOne">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#flush-{{ $item['id'] }}"
+                                                                aria-expanded="false"
+                                                                aria-controls="flush-{{ $item['id'] }}">
+                                                                Detail Package
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-{{ $item['id'] }}"
+                                                            class="accordion-collapse collapse show"
+                                                            aria-labelledby="flush-headingOne"
+                                                            data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body">{!! $item['description'] !!}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <a class="btn btn-soft-success w-100"
+                                                            onclick="location.href='{{ route('landing.booknow') }}'">Book
+                                                            Now </a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="py-4 text-center">
-                                                <h1 class="month"><sup><small>$</small></sup><span
-                                                        class="ff-secondary fw-bold">19</span> <span
-                                                        class="fs-13 text-muted">/Month</span></h1>
-                                            </div>
-
-                                            <div>
-                                                <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
-                                                    <li>
-                                                        <div class="d-flex">
-                                                            <div class="flex-shrink-0 text-success me-1">
-                                                                <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
-                                                            </div>
-                                                            <div class="flex-grow-1">
-                                                                Upto <b>3</b> Projects
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div class="mt-4">
-                                                    <a href="javascript:void(0);" class="btn btn-soft-success w-100">Get
-                                                        Started</a>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
+                                    <!--paket1-->
                                 </div>
-                                <!--end col-->
-                            @endforeach
-                        </div>
-
-                        <!--end row-->
-                    </div>
-                    <!-- end container -->
-            </section>
-
-            <!-- start plan -->
-            <section class="section bg-light" id="package">
-                <div class="bg-overlay bg-overlay-pattern"></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="text-center mb-3">
-                                <h3 class="mb-3 fw-semibold"> CHOOSE YOUR PACKAGE NOW</h3>
-                                <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu</p>
                             </div>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-                    <div class="swiper paket " dir="ltr">
-                        <div class="swiper-wrapper">
-                            @foreach ($package as $item)
+                        @endforeach
+                        {{-- @foreach ($package as $item)
                                 <div class="swiper-slide">
                                     <div class="row">
                                         <div class="col-lg-12 justify-content-between">
@@ -372,54 +633,19 @@
                                                             <h2 class="accordion-header" id="flush-headingOne">
                                                                 <button class="accordion-button collapsed" type="button"
                                                                     data-bs-toggle="collapse"
-                                                                    data-bs-target="#flush-collapseOne"
+                                                                    data-bs-target="#flush-{{ $item['id'] }}"
                                                                     aria-expanded="false"
-                                                                    aria-controls="flush-collapseOne">
+                                                                    aria-controls="flush-{{ $item['id'] }}">
                                                                     Detail Package
                                                                 </button>
                                                             </h2>
-                                                            <div id="flush-collapseOne"
+                                                            <div id="flush-{{ $item['id'] }}"
                                                                 class="accordion-collapse collapse show"
                                                                 aria-labelledby="flush-headingOne"
                                                                 data-bs-parent="#accordionFlushExample">
                                                                 <div class="accordion-body">{!! $item['description'] !!}</div>
                                                             </div>
                                                         </div>
-                                                        {{-- <div class="accordion custom-accordionwithicon"
-                                                        id="genques-accordion">
-                                                        <div class="accordion-item">
-                                                            <h2 class="accordion-header" id="genques-headingTwo">
-                                                                <button class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#genques-collapseTwo"
-                                                                    aria-expanded="false"
-                                                                    aria-controls="genques-collapseTwo">
-                                                                    Detail Package
-                                                                </button>
-                                                            </h2>
-                                                            <div id="genques-collapseTwo"
-                                                                class="accordion-collapse collapse"
-                                                                aria-labelledby="genques-headingTwo"
-                                                                data-bs-parent="#genques-accordion">
-                                                                <div class="accordion-body ff-secondary">
-                                                                    {!! $item['description'] !!}
-                                                                </div>
-                                                            </div>
-                                                        </div> --}}
-
-                                                        {{-- </div> --}}
-                                                        {{-- <div>
-                                                        <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
-                                                            <li>
-                                                                <div class="d-flex">
-                                                                    <div class="flex-grow-1">
-                                                                        {!! $item['description'] !!}
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-                                                        --}}
                                                         <div class="mt-4">
                                                             <a class="btn btn-soft-success w-100"
                                                                 onclick="location.href='{{ route('landing.booknow') }}'">Book
@@ -429,18 +655,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--paket1-->
                                     </div>
                                 </div>
-                            @endforeach
-
-                        </div>
-                        <div class="swiper-pagination swiper-pagination-dark"></div>
+                            @endforeach --}}
                     </div>
-                    <div class=" swiper next swiper-button-next"></div>
-                    <div class="swiper-prev swiper-button-prev"></div>
+                    <div class="swiper-pagination swiper-pagination-dark"></div>
                 </div>
-        </div>
+                {{-- <div class=" swiper next swiper-button-next"></div>
+                <div class="swiper-prev swiper-button-prev"></div> --}}
+            </div>
         </section>
         <!-- end package -->
 
@@ -458,8 +681,9 @@
                                 @foreach ($additional as $item)
                                     <div class="col-sm-6 col-xl-3">
                                         <div class="card">
-                                            <img class="card-img-top img-fluid" src="assets/images/small/img-2.jpg"
-                                                alt="Card image cap">
+                                            <img class="card-img-top img-fluid"
+                                                src="{{ asset('storage/images/' . $item->additional) }}"
+                                                class="img-fluid rounded-start" alt="Card image">
                                             {{-- src="{{ URL::asset('assets/images/small/img1.jpg') }}" --}}
                                             <div class="card-body">
                                                 <h4 class="card-title mb-2">{{ $item['title'] }}</h4>
@@ -488,7 +712,7 @@
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img class="rounded-start img-fluid h-100 object-cover"
-                                                    src="{{ asset('storage/' . $item->image) }}"
+                                                    src="{{ asset('storage/images/' . $item->image) }}"
                                                     class="img-fluid rounded-start" alt="Card image">
                                             </div>
                                             <div class="col-md-8">
@@ -753,7 +977,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h3 class="mb-3 fw-semibold">TENTANG <span class="text-danger">KAMI</span></h3>
+                            <h2 class="mb-3 fw-semibold">TENTANG <span class="text-danger">KAMI</span></h2>
                             <p class="text-muted mb-4">Kenali Kami Lebih dekat</p>
                         </div>
                     </div>
@@ -764,12 +988,12 @@
                     <div class="col-lg-4">
                         <div>
                             <div class="mt-4">
-                                <h5 class="fs-13 text-muted text-uppercase">Alamat : </h5>
+                                <h3 class="fs-13 text-muted text-uppercase">Alamat : </h3>
                                 <div class="ff-secondary fw-semibold">Perum Panorama Asri, Jl. Gorontalo
                                     No.14<br />Kecamatan Sukahaji <br> Kabupaten Majalengka</div>
                             </div>
                             <div class="mt-4">
-                                <h5 class="fs-13 text-muted text-uppercase">Waktu : </h5>
+                                <h3 class="fs-13 text-muted text-uppercase">Waktu : </h3>
                                 <div class="ff-secondary fw-semibold">09:00am to 05:00pm</div>
                             </div>
                             <div>
@@ -881,4 +1105,5 @@
         <script src="{{ URL::asset('build/libs/swiper/swiper-bundle.min.js') }}"></script>
         <!-- swiper.init js -->
         <script src="{{ URL::asset('build/js/pages/swiper.init.js') }}"></script>
+        <script src="{{ URL::asset('assets/js/pages/nft-landing.init.js') }}"></script>
     @endsection
