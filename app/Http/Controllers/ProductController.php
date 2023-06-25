@@ -57,7 +57,7 @@ class ProductController extends Controller
             Product::create($data);
             return redirect()->route('product.index')->with('success', 'Produk Berhasil ditambahkan');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error', 'Error');
+            return redirect()->back()->with('error', 'Gagal menyimpan');
         }
     }
 
@@ -115,7 +115,7 @@ class ProductController extends Controller
             return redirect()
                 ->route('product.index')
                 ->with([
-                    'error' => 'Error',
+                    'error' => 'Gagal menyimpan',
                 ]);
         }
     }

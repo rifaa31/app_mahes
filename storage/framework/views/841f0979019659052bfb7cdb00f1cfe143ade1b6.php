@@ -30,7 +30,7 @@
         <?php endif; ?>
 
         <?php if(session('error')): ?>
-            <div class="alert alert-error">
+            <div class="alert alert-danger">
                 <?php echo e(session('error')); ?>
 
             </div>

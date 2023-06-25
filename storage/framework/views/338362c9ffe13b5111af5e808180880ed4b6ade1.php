@@ -11,14 +11,8 @@
     <?php echo $__env->renderComponent(); ?>
 
     <div>
-        <?php if(session()->has('success')): ?>
-            <div class="alert alert-info" role="alert">
-                <?php echo e(session('success')); ?>
-
-        <?php endif; ?>
-
         <?php if(session('error')): ?>
-            <div class="alert alert-error" role="alert">
+            <div class="alert alert-danger" role="alert">
                 <?php echo e(session('error')); ?>
 
             </div>

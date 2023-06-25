@@ -326,10 +326,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-5">
                         <div class="text-center mb-5">
-                            <h2 class="mb-3 fw-semibold lh-base">Trending All Categories</h2>
-                            <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the
-                                process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a
-                                software developer.</p>
+                            <h1 class="mb-3 fw-semibold">DOKUMENTASI <span class="text-danger">& GALERI</span></h1>
                         </div>
                     </div><!-- end col -->
                 </div><!-- end row -->
@@ -358,6 +355,9 @@
                                                 <!--end col-->
                                             </div>
                                             <!--end row-->
+                                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle Top
+                                                Offcanvas</button>
                                             <a href="#!" class="float-end"> View All <i
                                                     class="ri-arrow-right-line align-bottom"></i></a>
                                             <h5 class="mb-0 fs-16"><a href="#!">Artwork <span
@@ -488,15 +488,82 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center">
-                            <h3 class="mb-3 fw-semibold"> All PACKAGE MAHESWARI</h3>
+                            <h1 class="mb-3 fw-semibold">ALL PACKAGE <span class="text-danger">MAHESWARI</span></h1>
                             <p class="text-muted mb-4">Professional Wedding Planner & Services</p>
                         </div>
                         <!-- end col -->
                     </div>
-                    <!-- end row -->
-
                     <div class="row gy-4">
                         @foreach ($all_package as $item)
+                            <div class="col-lg-4">
+                                <div class="card plan-box mb-0">
+                                    <div class="card-body p-4 m-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1">
+                                                <h5 class="mb-1 fw-semibold">{{ $item['title'] }}</h5>
+                                                <p class="text-muted mb-0">For Startup</p>
+                                            </div>
+                                            {{-- <div class="avatar-sm">
+                                                <div class="avatar-title bg-light rounded-circle text-primary">
+                                                    <i class="ri-book-mark-line fs-20"></i>
+                                                </div>
+                                            </div> --}}
+                                        </div>
+                                        <div class="py-4 text-center">
+                                            <h1 class="month"><span
+                                                    class="ff-secondary fw-bold">{{ number_format($item['price'], 0, '', '.') }}</span>
+                                            </h1>
+                                        </div>
+
+                                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="flush-headingOne">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#flush-{{ $item['id'] }}" aria-expanded="false"
+                                                        aria-controls="flush-{{ $item['id'] }}">
+                                                        Detail Package
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-{{ $item['id'] }}"
+                                                    class="accordion-collapse collapse show"
+                                                    aria-labelledby="flush-headingOne"
+                                                    data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body">{!! $item['description'] !!}</div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <a class="btn btn-soft-success w-100"
+                                                    onclick="location.href='{{ route('landing.booknow') }}'">Book
+                                                    Now </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col-->
+                        @endforeach
+                    </div>
+
+                    <!--end row-->
+                </div>
+                <!-- end container -->
+        </section>
+
+        <section class="section bg-light" id="">
+            {{-- <div class="bg-overlay bg-overlay-pattern"></div> --}}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-3">
+                            <h2 class="mb-3 fw-semibold">ONLY MAHESWARI <span class="text-danger">SERVICES PACKAGE</span>
+                            </h2>
+                            <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu</p>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <div class="row gy-4">
+                        @foreach ($package as $item)
                             <div class="col-lg-4">
                                 <div class="card plan-box mb-0">
                                     <div class="card-body p-4 m-2">
@@ -512,27 +579,32 @@
                                             </div>
                                         </div>
                                         <div class="py-4 text-center">
-                                            <h1 class="month"><sup><small>$</small></sup><span
-                                                    class="ff-secondary fw-bold">19</span> <span
-                                                    class="fs-13 text-muted">/Month</span></h1>
+                                            <h1 class="month"><span
+                                                    class="ff-secondary fw-bold">{{ number_format($item['price'], 0, '', '.') }}</span>
+                                            </h1>
                                         </div>
 
-                                        <div>
-                                            <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
-                                                <li>
-                                                    <div class="d-flex">
-                                                        <div class="flex-shrink-0 text-success me-1">
-                                                            <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
-                                                        </div>
-                                                        <div class="flex-grow-1">
-                                                            Upto <b>3</b> Projects
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#flush-{{ $item['id'] }}" aria-expanded="false"
+                                                        aria-controls="flush-{{ $item['id'] }}">
+                                                        Detail Package
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-{{ $item['id'] }}"
+                                                    class="accordion-collapse collapse show"
+                                                    aria-labelledby="flush-headingOne"
+                                                    data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body">{!! $item['description'] !!}</div>
+                                                </div>
+                                            </div>
                                             <div class="mt-4">
-                                                <a href="javascript:void(0);" class="btn btn-soft-success w-100">Get
-                                                    Started</a>
+                                                <a class="btn btn-soft-success w-100"
+                                                    onclick="location.href='{{ route('landing.booknow') }}'">Book
+                                                    Now </a>
                                             </div>
                                         </div>
                                     </div>
@@ -547,126 +619,6 @@
                 <!-- end container -->
         </section>
 
-        <!-- start plan -->
-        <section class="section bg-light" id="">
-            <div class="bg-overlay bg-overlay-pattern"></div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="text-center mb-3">
-                            <h3 class="mb-3 fw-semibold"> ONLY MAHESWARI SERVICES PACKAGE</h3>
-                            <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu</p>
-                        </div>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-                <div class="swiper paket " dir="ltr">
-                    <div class="swiper-wrapper">
-                        @foreach ($package as $item)
-                            <div class="swiper-slide">
-                                <div class="row">
-                                    <div class="col-lg-12 justify-content-between">
-                                        <div class="card plan-box mb-0">
-                                            <div class="card-body p-4 m-2">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-grow-1">
-                                                        <h5 class="mb-1 fw-semibold">{{ $item['title'] }}</h5>
-                                                        <p class="text-muted mb-0">Starting From</p>
-                                                    </div>
-                                                </div>
-                                                <div class="py-4 text-center">
-                                                    <h1 class="month"><sup></sup><span
-                                                            class="ff-secondary fw-bold">{{ number_format($item['price'], 0, '', '.') }}</span>
-                                                </div>
-
-                                                <div class="accordion accordion-flush" id="accordionFlushExample">
-                                                    <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="flush-headingOne">
-                                                            <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#flush-{{ $item['id'] }}"
-                                                                aria-expanded="false"
-                                                                aria-controls="flush-{{ $item['id'] }}">
-                                                                Detail Package
-                                                            </button>
-                                                        </h2>
-                                                        <div id="flush-{{ $item['id'] }}"
-                                                            class="accordion-collapse collapse show"
-                                                            aria-labelledby="flush-headingOne"
-                                                            data-bs-parent="#accordionFlushExample">
-                                                            <div class="accordion-body">{!! $item['description'] !!}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mt-4">
-                                                        <a class="btn btn-soft-success w-100"
-                                                            onclick="location.href='{{ route('landing.booknow') }}'">Book
-                                                            Now </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--paket1-->
-                                </div>
-                            </div>
-                        @endforeach
-                        {{-- @foreach ($package as $item)
-                                <div class="swiper-slide">
-                                    <div class="row">
-                                        <div class="col-lg-12 justify-content-between">
-                                            <div class="card plan-box mb-0">
-                                                <div class="card-body p-4 m-2">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <h5 class="mb-1 fw-semibold">{{ $item['title'] }}</h5>
-                                                            <p class="text-muted mb-0">Starting From</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="py-4 text-center">
-                                                        <h1 class="month"><sup></sup><span
-                                                                class="ff-secondary fw-bold">{{ number_format($item['price'], 0, '', '.') }}</span>
-                                                    </div>
-
-                                                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                                                        <div class="accordion-item">
-                                                            <h2 class="accordion-header" id="flush-headingOne">
-                                                                <button class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#flush-{{ $item['id'] }}"
-                                                                    aria-expanded="false"
-                                                                    aria-controls="flush-{{ $item['id'] }}">
-                                                                    Detail Package
-                                                                </button>
-                                                            </h2>
-                                                            <div id="flush-{{ $item['id'] }}"
-                                                                class="accordion-collapse collapse show"
-                                                                aria-labelledby="flush-headingOne"
-                                                                data-bs-parent="#accordionFlushExample">
-                                                                <div class="accordion-body">{!! $item['description'] !!}</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mt-4">
-                                                            <a class="btn btn-soft-success w-100"
-                                                                onclick="location.href='{{ route('landing.booknow') }}'">Book
-                                                                Now </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach --}}
-                    </div>
-                    <div class="swiper-pagination swiper-pagination-dark"></div>
-                </div>
-                {{-- <div class=" swiper next swiper-button-next"></div>
-                <div class="swiper-prev swiper-button-prev"></div> --}}
-            </div>
-        </section>
-        <!-- end package -->
-
         <!-- start add -->
         <section class="section" id="additional">
             <div class="container">
@@ -674,7 +626,7 @@
                     <div class="col-lg-12">
                         <div class="text-muted">
                             <div class="text-center mb-5">
-                                <h3 class="mb-3 fw-semibold">ADDITIONAL</h3>
+                                <h1 class="mb-3 fw-semibold">ADDITIONAL</h1>
                                 <p class="text-muted mb-4">Merupakan Paket Tambahan Jika Diperlukan</p>
                             </div>
                             <div class="row">
@@ -682,7 +634,7 @@
                                     <div class="col-sm-6 col-xl-3">
                                         <div class="card">
                                             <img class="card-img-top img-fluid"
-                                                src="{{ asset('storage/images/' . $item->additional) }}"
+                                                src="{{ asset('storage/images/' . $item->image) }}"
                                                 class="img-fluid rounded-start" alt="Card image">
                                             {{-- src="{{ URL::asset('assets/images/small/img1.jpg') }}" --}}
                                             <div class="card-body">
@@ -704,7 +656,8 @@
                     <div class="col-lg-12">
                         <div class="text-muted">
                             <div class="text-center mb-5">
-                                <h3 class="mb-3 fw-semibold">MUSIC ENTERTAINMENT</h3>
+                                <h1 class="mb-3 fw-semibold">MUSIC <span class="text-danger">ENTERTAINMENT</span></h1>
+                                <h3 class="mb-3 fw-semibold"> </h3>
                             </div>
                             <div class="row ">
                                 @foreach ($entertainment as $item)
@@ -729,25 +682,6 @@
                                         </div>
                                     </div>
                                 @endforeach
-
-                                {{-- @foreach ($entertainment as $item)
-                                    <div class="col-sm-6 col-xl-3 ">
-                                        <div class="card">
-                                            <img class="card-img-top img-fluid" src="assets/images/small/img-2.jpg"
-                                                alt="Card image cap">
-                                            {{-- src="{{ URL::asset('assets/images/small/img1.jpg') }}" --}}
-                                {{-- <div class="card-body">
-                                                <h4 class="card-title mb-2">{{ $item['title'] }}</h4>
-                                                <p class="card-text mb-0">{{ number_format($item['price'], 0, '', '.') }}
-                                                </p>
-                                                <p class="card-text"><small class="text-muted">Start
-                                                        Performance
-                                                        10.00-16.00 WIB</small></p>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                {{-- @endforeach --}}
-
                             </div><!-- end row -->
                         </div><!-- end row -->
                     </div>
@@ -756,55 +690,87 @@
         </section>
         <!-- end add -->
 
-
         <!-- start upacara adat -->
         <section class="section bg-light py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="text-muted">
-                            <div class="text-center mb-5">
-                                <h3 class="mb-3 fw-semibold">UPACARA ADAT </h3>
+                        <div class="row gallery-wrapper">
+                            <div class="element-item col-xxl-3 col-xl-4 col-sm-6 project designing development"
+                                data-category="designing development">
+                                <div class="gallery-box card">
+                                    <div class="gallery-container">
+                                        <a class="image-popup" href="{{ URL::asset('assets/images/small/img-1.jpg') }}"
+                                            title="">
+                                            <img class="gallery-img img-fluid mx-auto"
+                                                src="{{ URL::asset('assets/images/small/img-1.jpg') }}" alt="" />
+                                            <div class="gallery-overlay">
+                                                <h5 class="overlay-caption">Glasses and laptop from above</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item col-xxl-3 col-xl-4 col-sm-6 project designing development"
+                                data-category="designing development">
+                                <div class="gallery-box card">
+                                    <div class="gallery-container">
+                                        <a class="image-popup" href="{{ URL::asset('assets/images/small/img-1.jpg') }}"
+                                            title="">
+                                            <img class="gallery-img img-fluid mx-auto"
+                                                src="{{ URL::asset('assets/images/small/img-1.jpg') }}" alt="" />
+                                            <div class="gallery-overlay">
+                                                <h5 class="overlay-caption">Glasses and laptop from above</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element-item col-xxl-3 col-xl-4 col-sm-6 project designing development"
+                                data-category="designing development">
+                                <div class="gallery-box card">
+                                    <div class="gallery-container">
+                                        <a class="image-popup" href="{{ URL::asset('assets/images/small/img-1.jpg') }}"
+                                            title="">
+                                            <img class="gallery-img img-fluid mx-auto"
+                                                src="{{ URL::asset('assets/images/small/img-1.jpg') }}" alt="" />
+                                            <div class="gallery-overlay">
+                                                <h5 class="overlay-caption">Glasses and laptop from above</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--upacara adat1-->
-                    @foreach ($upacara_adat as $item)
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $item['title'] }}</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">
-                                    {{ number_format($item['price'], 0, '', '.') }}</h6>
-                                <p class="card-text">{!! $item['description'] !!}</p>
-                                {{-- <a href="#" class="card-link">Card link</a> --}}
-                                <a href="#" class="card-link">Another link</a>
-                            </div>
-                        </div>
-                    @endforeach
-                    {{-- <div class="col-xl-12" id="card-none1">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <h6 class="card-title mb-0">Mapag Calon Panganten</h6>
-                                        <h6 class="card-title mb-0"><b>IDR 3.500.000</b></h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body collapse show" id="collapseexample1">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0">
-                                        <i class="ri-checkbox-circle-fill text-primary"></i>
-                                    </div>
-                                    <div class="flex-grow-1 ms-2 text-muted">Live Music
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-muted">
+                            <div class="text-center mb-5">
+                                <h1 class="mb-3 fw-semibold">UPACARA <span class="text-danger">ADAT</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                    @foreach ($upacara_adat as $item)
+                        <div class="col-xl-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    {{-- <span class="float-end text-secondary">Overview</span> --}}
+                                    <h6 class="card-title">{{ $item['title'] }}</h6>
+                                    <p class="card-subtitle text-muted mb-0">
+                                        {{ number_format($item['price'], 0, '', '.') }}</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted">
+                                        {!! $item['description'] !!}
+                                    </p>
+                                </div>
+                            </div>
+                        </div><!-- end col -->
+                    @endforeach
+                </div>
             </div><!-- end row -->
         </section>
         <!-- end upacara adat -->
@@ -819,7 +785,7 @@
                             <div>
                                 <i class="ri-double-quotes-l text-white display-5"></i>
                             </div>
-                            <h4 class="text-white mb-5">TESTIMONI </h4>
+                            <h3 class="text-white mb-5">TESTIMONI </h3>
                             {{-- <p class="text-white mb-4">Berikut adalah Testimoni Dari Pengantin Yang Telah
                         Menggunakan Jasa
                         Kami.</p> --}}
@@ -865,7 +831,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h3 class="mb-3 fw-semibold">WEDDING <span class="text-danger">CONSULTANT</span></h3>
+                            <h1 class="mb-3 fw-semibold">WEDDING <span class="text-danger">CONSULTANT</span></h1>
                             <p class="text-muted mb-4">Kami Siap Memberikan Jasa Konsultasi Mengenai Konsep
                                 Pernikahan Yang Sesuai Dengan Impian Pernikahmu.</p>
                         </div>
@@ -977,7 +943,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h2 class="mb-3 fw-semibold">TENTANG <span class="text-danger">KAMI</span></h2>
+                            <h1 class="mb-3 fw-semibold">TENTANG <span class="text-danger">KAMI</span></h1>
                             <p class="text-muted mb-4">Kenali Kami Lebih dekat</p>
                         </div>
                     </div>
@@ -986,50 +952,47 @@
 
                 <div class="row gy-4">
                     <div class="col-lg-4">
+                        <div class="mt-4">
+                            <h2 class="fs-13 text-muted text-uppercase">Alamat : </h2>
+                            <div class="ff-secondary fw-semibold">Perum Panorama Asri, Jl. Gorontalo
+                                No.14<br />Kecamatan Sukahaji <br> Kabupaten Majalengka</div>
+                        </div>
+                        <div class="mt-4">
+                            <h2 class="fs-13 text-muted text-uppercase">Waktu : </h2>
+                            <div class="ff-secondary fw-semibold">09:00 AM to 05:00 PM</div>
+                        </div>
                         <div>
-                            <div class="mt-4">
-                                <h3 class="fs-13 text-muted text-uppercase">Alamat : </h3>
-                                <div class="ff-secondary fw-semibold">Perum Panorama Asri, Jl. Gorontalo
-                                    No.14<br />Kecamatan Sukahaji <br> Kabupaten Majalengka</div>
-                            </div>
-                            <div class="mt-4">
-                                <h3 class="fs-13 text-muted text-uppercase">Waktu : </h3>
-                                <div class="ff-secondary fw-semibold">09:00am to 05:00pm</div>
-                            </div>
-                            <div>
-                                <a class="btn btn-primary btn-icon waves-effect waves-light"><i
-                                        class="ri-facebook-fill fs-16"
-                                        onclick="location.href='{{ url('https://web.facebook.com/arki.ajipangestu') }}'"
-                                        target="_blank"></i></a>
-                                <a class="btn btn-danger btn-icon waves-effect waves-light"><i
-                                        class="ri-instagram-fill fs-16"
-                                        onclick="location.href='{{ url('https://www.instagram.com/maheswari.enterprise/?next=%2F&hl=id') }}'"
-                                        target="_blank"></i></a>
-                                <a class="btn btn-info btn-icon waves-effect waves-light"><i
-                                        class="ri-whatsapp-fill fs-16"
-                                        onclick="location.href='{{ url('https://wa.me/+6282316895620') }}'"
-                                        target="_blank"></i></a>
-                            </div>
-
+                            <a class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-20"
+                                    onclick="location.href='{{ url('https://web.facebook.com/arki.ajipangestu') }}'"
+                                    target="_blank"></i></a>
+                            <a class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-instagram-fill fs-20"
+                                    onclick="location.href='{{ url('https://www.instagram.com/maheswari.enterprise/?next=%2F&hl=id') }}'"
+                                    target="_blank"></i></a>
+                            <a class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-whatsapp-fill fs-20"
+                                    onclick="location.href='{{ url('https://wa.me/+6282316895620') }}'"
+                                    target="_blank"></i></a>
                         </div>
                     </div>
                     <!-- end col -->
-                    <div class="col-lg-8 mb-5">
-                        <div class="card-body">
-                            <div>
-                                <div class="row">
-                                    <iframe class="gmaps"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.552200589918!2d108.26807868885498!3d-6.824186699999981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f256e1dea3cad%3A0x5989ed5e51590dbc!2sPerumahan%20Panorama%20Asri%20Majalengka!5e0!3m2!1sid!2sid!4v1668756542860!5m2!1sid!2sid"
-                                        width="750" height="300" style="border:0;" allowfullscreen=""
-                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <div>
+                                    <div class="row">
+                                        {{-- <div class="card-body"> --}}
+                                        <iframe class="gmaps"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.552200589918!2d108.26807868885498!3d-6.824186699999981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f256e1dea3cad%3A0x5989ed5e51590dbc!2sPerumahan%20Panorama%20Asri%20Majalengka!5e0!3m2!1sid!2sid!4v1668756542860!5m2!1sid!2sid"
+                                            width="690" height="300" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
                                 </div>
-                            </div>
-                        </div><!-- end card-body -->
+                            </div><!-- end card-body -->
+                        </div>
                     </div>
+                    <!-- end row -->
                 </div>
-                <!-- end row -->
+                <!-- end container -->
             </div>
-            <!-- end container -->
         </section>
 
 

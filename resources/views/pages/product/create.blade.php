@@ -12,13 +12,8 @@
     @endcomponent
 
     <div>
-        @if (session()->has('success'))
-            <div class="alert alert-info" role="alert">
-                {{ session('success') }}
-        @endif
-
         @if (session('error'))
-            <div class="alert alert-error" role="alert">
+            <div class="alert alert-danger" role="alert">
                 {{ session('error') }}
             </div>
         @endif
