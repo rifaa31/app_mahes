@@ -78,7 +78,7 @@
                                     yang kami kemas sesuai dengan permintaan dan pengimplementasian yang Epic.</p>
 
                                 <div class="hstack gap-2 justify-content-center">
-                                    <a href='<?php echo e(route('landing.booknow')); ?>' class="btn btn-primary">Book Now <i
+                                    <a href='<?php echo e(route('landing.select')); ?>' class="btn btn-primary">Book Now <i
                                             class="ri-arrow-right-line align-middle ms-1"></i></a>
                                     <a href="#package" class="btn btn-danger">View Package <i
                                             class="ri-eye-line align-middle ms-1"></i></a>
@@ -100,9 +100,9 @@
                         <div class="col-lg-8">
                             <div class="text-center mb-5">
                                 <h1 class="mb-3 ff-secondary fw-semibold lh-base">Kenapa Harus Maheswari ?</h1>
-                                <p class="text-muted">Kami memberikan pelayanan terbaik, Kami bekerja sesuai dengan
-                                    permintaan dan kebutuhan, Kami bekerja dengan penuh rasa tanggung jawab, Kami bantu
-                                    untuk mewujudkan Your Wedding Dream, We are Young, Smart & Integrity</p>
+                                <p class="text-muted">Kami Memberikan Pelayanan Terbaik, Kami Bekerja Sesuai Dengan
+                                    Permintaan & Kebutuhan, Kami Bekerja Dengan Penuh Rasa Tanggung Jawab, Kami Bantu
+                                    Untuk Mewujudkan Your Wedding Dream, We are Young, Smart & Integrity</p>
                             </div>
                         </div>
                         <!-- end row -->
@@ -188,7 +188,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5 class="fs-18">Zuper Team</h5>
+                                    <h5 class="fs-18">Super Crew</h5>
                                     <p class="text-muted my-3 ff-secondary">Koordinasi dan Konsolidasi yang
                                         kontinyu
                                         antara
@@ -246,159 +246,120 @@
 
         <!-- start plan -->
         <section class="section bg-light" id="categories">
-            <div class="container-fluid">
+            
+            <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-5">
+                    <div class="col-lg-8">
                         <div class="text-center mb-5">
-                            <h1 class="mb-3 fw-semibold">DOKUMENTASI <span class="text-danger">& GALERI</span></h1>
+                            <div class="text-center mb-5">
+                                <h1 class="mb-3 fw-semibold">DOKUMENTASI <span class="text-danger">& GALERI</span></h1>
+                            </div>
+                            <ul class="nav nav-pills filter-btns justify-content-center" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fw-medium active" type="button"
+                                        data-filter="all">All</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fw-medium" type="button" data-filter="artwork">WO</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fw-medium" type="button" data-filter="music">Make
+                                        Up</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fw-medium" type="button"
+                                        data-filter="games">Dekorasi</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fw-medium" type="button"
+                                        data-filter="crypto-card">Entertainment
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fw-medium" type="button" data-filter="3d-style">
+                                        lainnya</button>
+                                </li>
+                            </ul>
                         </div>
                     </div><!-- end col -->
                 </div><!-- end row -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <!-- Swiper -->
-                        <div class="swiper mySwiper pb-4">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row g-1 mb-3">
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-06.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-2.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mt-1">
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-5.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mb-1">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-03.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                </div>
-                                                <!--end col-->
-                                            </div>
-                                            <!--end row-->
-                                            <a href="#!" class="float-end"> View All <i
-                                                    class="ri-arrow-right-line align-bottom"></i></a>
-                                            <h5 class="mb-0 fs-16"><a href="#!">Artwork <span
-                                                        class="badge badge-soft-success">206</span></a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row g-1 mb-3">
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-05.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-1.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mt-1">
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-4.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mb-1">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-04.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                </div>
-                                                <!--end col-->
-                                            </div>
-                                            <!--end row-->
-                                            <a href="#!" class="float-end"> View All <i
-                                                    class="ri-arrow-right-line align-bottom"></i></a>
-                                            <h5 class="mb-0 fs-16"><a href="#!">Crypto Card <span
-                                                        class="badge badge-soft-success">743</span></a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row g-1 mb-3">
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-02.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-3.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mt-1">
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-1.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mb-1">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-01.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                </div>
-                                                <!--end col-->
-                                            </div>
-                                            <!--end row-->
-                                            <a href="#!" class="float-end"> View All <i
-                                                    class="ri-arrow-right-line align-bottom"></i></a>
-                                            <h5 class="mb-0 fs-16"><a href="#!">Music <span
-                                                        class="badge badge-soft-success">679</span></a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row g-1 mb-3">
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-03.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-5.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mt-1">
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-2.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mb-1">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-05.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                </div>
-                                                <!--end col-->
-                                            </div>
-                                            <!--end row-->
-                                            <a href="#!" class="float-end"> View All <i
-                                                    class="ri-arrow-right-line align-bottom"></i></a>
-                                            <h5 class="mb-0 fs-16"><a href="#!">Games <span
-                                                        class="badge badge-soft-success">341</span></a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row g-1 mb-3">
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-02.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-3.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mt-1">
-                                                </div>
-                                                <!--end col-->
-                                                <div class="col-lg-6">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-1.gif')); ?>"
-                                                        alt="" class="img-fluid rounded mb-1">
-                                                    <img src="<?php echo e(URL::asset('assets/images/nft/img-01.jpg')); ?>"
-                                                        alt="" class="img-fluid rounded">
-                                                </div>
-                                                <!--end col-->
-                                            </div>
-                                            <!--end row-->
-                                            <a href="#!" class="float-end"> View All <i
-                                                    class="ri-arrow-right-line align-bottom"></i></a>
-                                            <h5 class="mb-0 fs-16"><a href="#!">Photography <span
-                                                        class="badge badge-soft-success">1452</span></a></h5>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-lg-4 product-item artwork crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            
+                            <div class="explore-place-bid-img">
+                                <img src="<?php echo e(URL::asset('assets/images/nft/img-03.jpg')); ?>" alt=""
+                                    class="card-img-top explore-img" />
+                                
                             </div>
-                            <div class="swiper-pagination swiper-pagination-dark"></div>
+                            <div class="card-body">
+                                
+                                <p class="text-muted mb-1">Photography</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item music crypto-card games">
+                        <div class="card explore-box card-animate">
+                            <div class="explore-place-bid-img">
+                                <img src="<?php echo e(URL::asset('assets/images/nft/img-02.jpg')); ?>" alt=""
+                                    class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted mb-1">Photography</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item artwork music games">
+                        <div class="card explore-box card-animate">
+                            <div class="explore-place-bid-img">
+                                <img src="<?php echo e(URL::asset('assets/images/nft/gif/img-4.gif')); ?>" alt=""
+                                    class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted mb-1">Photography</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item crypto-card 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="explore-place-bid-img">
+                                <img src="<?php echo e(URL::asset('assets/images/nft/img-01.jpg')); ?>" alt=""
+                                    class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted mb-1">Photography</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item games music 3d-style">
+                        <div class="card explore-box card-animate">
+                            <div class="explore-place-bid-img">
+                                <img src="<?php echo e(URL::asset('assets/images/nft/img-05.jpg')); ?>" alt=""
+                                    class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted mb-1">Photography</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 product-item artwork music crypto-card">
+                        <div class="card explore-box card-animate">
+                            <div class="explore-place-bid-img">
+                                <img src="<?php echo e(URL::asset('assets/images/nft/img-06.jpg')); ?>" alt=""
+                                    class="card-img-top explore-img" />
+                                <div class="bg-overlay"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-muted mb-1">Photography</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div><!-- end container -->
             </div><!-- end container -->
         </section>
         <!-- end plan -->
@@ -442,8 +403,7 @@
                                                         Detail Package
                                                     </button>
                                                 </h2>
-                                                <div id="flush-<?php echo e($item['id']); ?>"
-                                                    class="accordion-collapse collapse show"
+                                                <div id="flush-<?php echo e($item['id']); ?>" class="accordion-collapse collapse"
                                                     aria-labelledby="flush-headingOne"
                                                     data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body"><?php echo $item['description']; ?></div>
@@ -473,7 +433,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="text-center mb-3">
-                            <h2 class="mb-3 fw-semibold">ONLY MAHESWARI <span class="text-danger">SERVICES PACKAGE</span>
+                            <h2 class="mb-3 fw-semibold">WEDDING ORGANIZER <span class="text-danger">SERVICES ONLY</span>
                             </h2>
                             <p class="text-muted mb-4">Pilihlah Paket yang sesuai dengan Kebutuhan Kamu</p>
                         </div>
@@ -511,8 +471,7 @@
                                                         Detail Package
                                                     </button>
                                                 </h2>
-                                                <div id="flush-<?php echo e($item['id']); ?>"
-                                                    class="accordion-collapse collapse show"
+                                                <div id="flush-<?php echo e($item['id']); ?>" class="accordion-collapse collapse"
                                                     aria-labelledby="flush-headingOne"
                                                     data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body"><?php echo $item['description']; ?></div>
@@ -543,7 +502,8 @@
                     <div class="col-lg-12">
                         <div class="text-muted">
                             <div class="text-center mb-5">
-                                <h1 class="mb-3 fw-semibold">ADDITIONAL</h1>
+                                <h1 class="mb-3 fw-semibold">ADD<span class="text-danger">ITIONAL</span>
+                                </h1>
                                 <p class="text-muted mb-4">Merupakan Paket Tambahan Jika Diperlukan</p>
                             </div>
                             <div class="row">
@@ -673,7 +633,6 @@
                         <div class="col-xl-4">
                             <div class="card">
                                 <div class="card-header">
-                                    
                                     <h6 class="card-title"><?php echo e($item['title']); ?></h6>
                                     <p class="card-subtitle text-muted mb-0">
                                         <?php echo e(number_format($item['price'], 0, '', '.')); ?></p>

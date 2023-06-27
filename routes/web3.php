@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
  */
 Route::prefix('/')->group(function () {
     Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+    Route::get('/select-booking', [LandingController::class, 'select'])->name('landing.select');
+    Route::get('/allpackage', [LandingController::class, 'allpackage'])->name('landing.allpackage');
     Route::get('/booknow', [LandingController::class, 'booknow'])->name('landing.booknow');
     Route::post('/store', [LandingController::class, 'store'])->name('landing.store');
 });

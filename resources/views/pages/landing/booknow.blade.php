@@ -38,10 +38,9 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12 col-lg-6 col-xl-8">
                         <div class="card mt-4">
-
                             <div class="card-body col-lg-12 mb-2">
-                                <div class="text-center mt-2">
-                                    <h5 class="text-primary mb-4">Booking Now !</h5>
+                                <div class="text-center mt-5">
+                                    <h5 class="text-primary mb-4">Booking wedding organizer Services Only</h5>
                                 </div>
                                 @if (session()->has('success'))
                                     <div class="alert alert-info" role="alert">
@@ -82,7 +81,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">
-                                        <label for="package" class="col-sm-3 col-form-label">Paket Utama <span
+                                        <label for="package" class="col-sm-3 col-form-label">Paket Service Only <span
                                                 class="text-danger">*</span></label>
                                         <div class="col-sm-9">
                                             <select class="form-select" name="product_id[]" id="package"

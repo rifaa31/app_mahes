@@ -10,6 +10,21 @@
         <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
 
+    <div>
+        <?php if(session()->has('success')): ?>
+            <div class="alert alert-info" role="alert">
+                <?php echo e(session('success')); ?>
+
+        <?php endif; ?>
+
+        <?php if(session('error')): ?>
+            <div class="alert alert-error" role="alert">
+                <?php echo e(session('error')); ?>
+
+            </div>
+        <?php endif; ?>
+    </div>
+
     <div class="row">
         <div class="col-lg-12 mb-2 ">
             <div class="align-items-center d-flex">
@@ -49,6 +64,7 @@
                     <label for="summernote" class="col-sm-3 col-form-label">Deskripsi Produk <span
                             class="text-danger">*</span></label>
                     <div class="col-sm-9">
+                        
                         <textarea id="summernote" name="description" type="text" class="form-control" style="height: 100px"
                             id="floatingTextarea" value="<?php echo e($product['description']); ?>"></textarea>
                     </div>

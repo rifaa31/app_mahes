@@ -37,9 +37,10 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12 col-lg-6 col-xl-8">
                         <div class="card mt-4">
+
                             <div class="card-body col-lg-12 mb-2">
-                                <div class="text-center mt-5">
-                                    <h5 class="text-primary mb-4">Booking wedding organizer Services Only</h5>
+                                <div class="text-center mt-2">
+                                    <h5 class="text-primary mb-4">All Package Maheswari</h5>
                                 </div>
                                 <?php if(session()->has('success')): ?>
                                     <div class="alert alert-info" role="alert">
@@ -81,16 +82,16 @@
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">
-                                        <label for="package" class="col-sm-3 col-form-label">Paket Service Only <span
+                                        <label for="all_package" class="col-sm-3 col-form-label">All Package <span
                                                 class="text-danger">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-select" name="product_id[]" id="package"
+                                            <select class="form-select" name="product_id[]" id="all_package"
                                                 oninvalid="this.setCustomValidity('Pilih minimal 1 Package')"
                                                 oninput="this.setCustomValidity('')" required>
                                                 <option value="">Pilih Package</option>
                                                 <?php $__currentLoopData = $product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <?php
-                                                        if ($p['type'] != 'package') {
+                                                        if ($p['type'] != 'all_package') {
                                                             continue;
                                                         }
                                                     ?>
@@ -262,33 +263,31 @@
     <script src="<?php echo e(URL::asset('assets/js/pages/particles.app.js')); ?>"></script>
     <script src="<?php echo e(URL::asset('assets/js/pages/password-addon.init.js')); ?>"></script>
     <script>
-        const package = document.querySelector('#package')
+        const all_package = document.querySelector('#all_package')
         const additional = document.querySelector('#additional')
-        const equipment = document.querySelector('#equipment')
         const upacara_adat = document.querySelector('#upacara_adat')
         const entertainment = document.querySelector('#entertainment')
         const minimal_payment = document.querySelector('#minimal_payment')
         const total_payment = document.querySelector('#total_payment')
-        let package_cost = 0;
+        let all_package_cost = 0;
         let additional_cost = 0;
-        let equipment_cost = 0;
         let updat_cost = 0;
         let entertainment_cost = 0;
         let total = 0;
         let final_payment = 0;
 
-        package.addEventListener('change', function(e) {
+        all_package.addEventListener('change', function(e) {
 
             if (e.currentTarget.value == '') {
-                package_cost = 0;
-                total = package_cost;
+                all_package_cost = 0;
+                total = all_package_cost;
             } else {
-                total -= package_cost
-                package_cost = parseInt(split_option(e.currentTarget.value)[1]);
+                total -= all_package_cost
+                all_package_cost = parseInt(split_option(e.currentTarget.value)[1]);
 
-                total = package_cost
+                total = all_package_cost
             }
-            final_payment = total + additional_cost + equipment_cost + entertainment_cost + updat_cost
+            final_payment = total + additional_cost + entertainment_cost + updat_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -303,23 +302,7 @@
 
                 total = additional_cost
             }
-            final_payment = total + package_cost + equipment_cost + entertainment_cost + updat_cost
-            total_payment.innerHTML = final_payment
-            minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
-        })
-
-        equipment.addEventListener('change', function(e) {
-
-            if (e.currentTarget.value == '') {
-                equipment_cost = 0;
-                total = equipment_cost;
-            } else {
-                total -= equipment_cost
-                equipment_cost = parseInt(split_option(e.currentTarget.value)[1]);
-
-                total = equipment_cost
-            }
-            final_payment = total + additional_cost + package_cost + entertainment_cost + updat_cost
+            final_payment = total + all_package_cost + entertainment_cost + updat_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -335,7 +318,7 @@
 
                 total = entertainment_cost
             }
-            final_payment = total + additional_cost + package_cost + updat_cost + equipment_cost
+            final_payment = total + additional_cost + all_package_cost + updat_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -351,7 +334,7 @@
 
                 total = updat_cost
             }
-            final_payment = total + additional_cost + package_cost + equipment_cost + entertainment_cost
+            final_payment = total + additional_cost + all_package_cost + entertainment_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -371,4 +354,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\applications\maheswari-app\resources\views/pages/landing/booknow.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\applications\maheswari-app\resources\views/pages/landing/allpackage.blade.php ENDPATH**/ ?>

@@ -14,10 +14,10 @@ class LandingController extends Controller
     {
         $uri = $request->route()->getPrefix();
         $testimoni = Testimoni::paginate()->toArray();
-        $all_package = Product::select('title', 'price', 'description')
+        $all_package = Product::select('id', 'title', 'price', 'description')
             ->where('type', 'all_package')->get();
         // $package = Product::paginate()->toArray();
-        $package = Product::select('title', 'price', 'description')
+        $package = Product::select('id', 'title', 'price', 'description')
             ->where('type', 'package')->get();
         // $additional = Product::paginate()->toArray();
         $additional = Product::select('title', 'price', 'description', 'image')
@@ -26,7 +26,7 @@ class LandingController extends Controller
         $entertainment = Product::select('title', 'price', 'description', 'image')
             ->where('type', 'entertainment')->get();
         // $upacara_adat = Product::paginate()->toArray();
-        $upacara_adat = Product::select('title', 'price', 'description')
+        $upacara_adat = Product::select('id', 'title', 'price', 'description')
             ->where('type', 'upacara_adat')->get();
         /**
          * pages adalah nama folder
@@ -41,6 +41,22 @@ class LandingController extends Controller
         $product = Product::all()->toArray();
 
         return view('pages.landing.booknow', compact('product'));
+    }
+
+    public function Allpackage()
+    {
+        $booking = Booking::all();
+        $product = Product::all()->toArray();
+
+        return view('pages.landing.allpackage', compact('product'));
+    }
+
+    public function select()
+    {
+        $booking = Booking::all();
+        $product = Product::all()->toArray();
+
+        return view('pages.landing.select', compact('product'));
     }
 
     public function store(Request $request)
@@ -85,4 +101,5 @@ class LandingController extends Controller
             ');
         }
     }
+
 }

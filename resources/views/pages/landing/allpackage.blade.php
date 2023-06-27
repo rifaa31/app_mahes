@@ -1,7 +1,8 @@
-<?php $__env->startSection('title'); ?>
-    <?php echo app('translator')->get('Book Now '); ?>
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('content'); ?>
+@extends('layouts.master-without-nav')
+@section('title')
+    @lang('Book Now ')
+@endsection
+@section('content')
     <div class="auth-page-wrapper pt-5">
         <!-- auth page bg -->
         <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
@@ -23,7 +24,7 @@
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
                                 <a href="index" class="d-inline-block auth-logo">
-                                    <img src="<?php echo e(URL::asset('assets/images/logo-maheswari.png')); ?>" alt=""
+                                    <img src="{{ URL::asset('assets/images/logo-maheswari.png') }}" alt=""
                                         height="80">
                                 </a>
                             </div>
@@ -37,17 +38,17 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12 col-lg-6 col-xl-8">
                         <div class="card mt-4">
-                            <div class="card-body col-lg-12 mb-2">
-                                <div class="text-center mt-5">
-                                    <h5 class="text-primary mb-4">Booking wedding organizer Services Only</h5>
-                                </div>
-                                <?php if(session()->has('success')): ?>
-                                    <div class="alert alert-info" role="alert">
-                                        <?php echo e(session('success')); ?> </div>
-                                <?php endif; ?>
-                                <form class="row g-3" method="POST" action="<?php echo e(route('landing.store')); ?>">
-                                    <?php echo e(csrf_field()); ?>
 
+                            <div class="card-body col-lg-12 mb-2">
+                                <div class="text-center mt-2">
+                                    <h5 class="text-primary mb-4">All Package Maheswari</h5>
+                                </div>
+                                @if (session()->has('success'))
+                                    <div class="alert alert-info" role="alert">
+                                        {{ session('success') }} </div>
+                                @endif
+                                <form class="row g-3" method="POST" action="{{ route('landing.store') }}">
+                                    {{ csrf_field() }}
                                     <div class="col-md-6">
                                         <label for="customer" class="form-label">Nama calon Pengantin <span
                                                 class="text-danger">*</span></label>
@@ -81,23 +82,23 @@
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">
-                                        <label for="package" class="col-sm-3 col-form-label">Paket Service Only <span
+                                        <label for="all_package" class="col-sm-3 col-form-label">All Package <span
                                                 class="text-danger">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-select" name="product_id[]" id="package"
+                                            <select class="form-select" name="product_id[]" id="all_package"
                                                 oninvalid="this.setCustomValidity('Pilih minimal 1 Package')"
                                                 oninput="this.setCustomValidity('')" required>
                                                 <option value="">Pilih Package</option>
-                                                <?php $__currentLoopData = $product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php
-                                                        if ($p['type'] != 'package') {
+                                                @foreach ($product as $p)
+                                                    @php
+                                                        if ($p['type'] != 'all_package') {
                                                             continue;
                                                         }
-                                                    ?>
-                                                    <option value="<?php echo e($p['id']); ?>#<?php echo e($p['price']); ?>">
-                                                        <?php echo e($p['title']); ?> -
-                                                        <?php echo e(number_format($p['price'], 0, '', '.')); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    @endphp
+                                                    <option value="{{ $p['id'] }}#{{ $p['price'] }}">
+                                                        {{ $p['title'] }} -
+                                                        {{ number_format($p['price'], 0, '', '.') }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -106,16 +107,16 @@
                                         <div class="col-sm-9">
                                             <select class="form-select" name="product_id[]" id="additional">
                                                 <option value="">Pilih Additional</option>
-                                                <?php $__currentLoopData = $product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php
+                                                @foreach ($product as $p)
+                                                    @php
                                                         if ($p['type'] != 'additional') {
                                                             continue;
                                                         }
-                                                    ?>
-                                                    <option value="<?php echo e($p['id']); ?>#<?php echo e($p['price']); ?>">
-                                                        <?php echo e($p['title']); ?> -
-                                                        <?php echo e(number_format($p['price'], 0, '', '.')); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    @endphp
+                                                    <option value="{{ $p['id'] }}#{{ $p['price'] }}">
+                                                        {{ $p['title'] }} -
+                                                        {{ number_format($p['price'], 0, '', '.') }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -124,16 +125,16 @@
                                         <div class="col-sm-9">
                                             <select class="form-select" name="product_id[]" id="equipment">
                                                 <option value="">-Pilih Equipment-</option>
-                                                <?php $__currentLoopData = $product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php
+                                                @foreach ($product as $p)
+                                                    @php
                                                         if ($p['type'] != 'equipment') {
                                                             continue;
                                                         }
-                                                    ?>
-                                                    <option value="<?php echo e($p['id']); ?>#<?php echo e($p['price']); ?>">
-                                                        <?php echo e($p['title']); ?> -
-                                                        <?php echo e(number_format($p['price'], 0, '', '.')); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    @endphp
+                                                    <option value="{{ $p['id'] }}#{{ $p['price'] }}">
+                                                        {{ $p['title'] }} -
+                                                        {{ number_format($p['price'], 0, '', '.') }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -143,16 +144,16 @@
                                         <div class="col-sm-9">
                                             <select class="form-select" name="product_id[]" id="entertainment">
                                                 <option value="">-Pilih Entertainment-</option>
-                                                <?php $__currentLoopData = $product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php
+                                                @foreach ($product as $p)
+                                                    @php
                                                         if ($p['type'] != 'entertainment') {
                                                             continue;
                                                         }
-                                                    ?>
-                                                    <option value="<?php echo e($p['id']); ?>#<?php echo e($p['price']); ?>">
-                                                        <?php echo e($p['title']); ?> -
-                                                        <?php echo e(number_format($p['price'], 0, '', '.')); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    @endphp
+                                                    <option value="{{ $p['id'] }}#{{ $p['price'] }}">
+                                                        {{ $p['title'] }} -
+                                                        {{ number_format($p['price'], 0, '', '.') }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -161,16 +162,16 @@
                                         <div class="col-sm-9">
                                             <select class="form-select" name="product_id[]" id="upacara_adat">
                                                 <option value="">-Pilih Upacara Adat-</option>
-                                                <?php $__currentLoopData = $product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php
+                                                @foreach ($product as $p)
+                                                    @php
                                                         if ($p['type'] != 'upacara_adat') {
                                                             continue;
                                                         }
-                                                    ?>
-                                                    <option value="<?php echo e($p['id']); ?>#<?php echo e($p['price']); ?>">
-                                                        <?php echo e($p['title']); ?> -
-                                                        <?php echo e(number_format($p['price'], 0, '', '.')); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    @endphp
+                                                    <option value="{{ $p['id'] }}#{{ $p['price'] }}">
+                                                        {{ $p['title'] }} -
+                                                        {{ number_format($p['price'], 0, '', '.') }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -194,11 +195,12 @@
                                             admin</p>
                                     </h6>
                                     <div class="mt-4">
-                                        
+                                        {{-- <button type="submit" class="btn btn-success w-100" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop"> Booking --}}
                                         <button type="submit" class="btn btn-success w-100">
                                             Booking
                                         </button>
-                                        
+                                        {{-- href='{{ url('https://wa.me/+6282316895620') }}' target="_blank" --}}
                                     </div>
                                 </form>
                             </div>
@@ -230,7 +232,7 @@
                                 <a href="javascript:void(0);" class="btn btn-link link-success fw-medium"
                                     data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Close</a>
                                 <a class="btn btn-success" target="_blank"
-                                    href='<?php echo e(url('https://wa.me/+6282316895620')); ?>'> Payment</a>
+                                    href='{{ url('https://wa.me/+6282316895620') }}'> Payment</a>
 
                             </div>
                         </div>
@@ -256,39 +258,37 @@
         <!-- end Footer -->
     </div>
     <!-- end auth-page-wrapper -->
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('script'); ?>
-    <script src="<?php echo e(URL::asset('assets/libs/particles.js/particles.js.min.js')); ?>"></script>
-    <script src="<?php echo e(URL::asset('assets/js/pages/particles.app.js')); ?>"></script>
-    <script src="<?php echo e(URL::asset('assets/js/pages/password-addon.init.js')); ?>"></script>
+@endsection
+@section('script')
+    <script src="{{ URL::asset('assets/libs/particles.js/particles.js.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/pages/particles.app.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/pages/password-addon.init.js') }}"></script>
     <script>
-        const package = document.querySelector('#package')
+        const all_package = document.querySelector('#all_package')
         const additional = document.querySelector('#additional')
-        const equipment = document.querySelector('#equipment')
         const upacara_adat = document.querySelector('#upacara_adat')
         const entertainment = document.querySelector('#entertainment')
         const minimal_payment = document.querySelector('#minimal_payment')
         const total_payment = document.querySelector('#total_payment')
-        let package_cost = 0;
+        let all_package_cost = 0;
         let additional_cost = 0;
-        let equipment_cost = 0;
         let updat_cost = 0;
         let entertainment_cost = 0;
         let total = 0;
         let final_payment = 0;
 
-        package.addEventListener('change', function(e) {
+        all_package.addEventListener('change', function(e) {
 
             if (e.currentTarget.value == '') {
-                package_cost = 0;
-                total = package_cost;
+                all_package_cost = 0;
+                total = all_package_cost;
             } else {
-                total -= package_cost
-                package_cost = parseInt(split_option(e.currentTarget.value)[1]);
+                total -= all_package_cost
+                all_package_cost = parseInt(split_option(e.currentTarget.value)[1]);
 
-                total = package_cost
+                total = all_package_cost
             }
-            final_payment = total + additional_cost + equipment_cost + entertainment_cost + updat_cost
+            final_payment = total + additional_cost + entertainment_cost + updat_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -303,23 +303,7 @@
 
                 total = additional_cost
             }
-            final_payment = total + package_cost + equipment_cost + entertainment_cost + updat_cost
-            total_payment.innerHTML = final_payment
-            minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
-        })
-
-        equipment.addEventListener('change', function(e) {
-
-            if (e.currentTarget.value == '') {
-                equipment_cost = 0;
-                total = equipment_cost;
-            } else {
-                total -= equipment_cost
-                equipment_cost = parseInt(split_option(e.currentTarget.value)[1]);
-
-                total = equipment_cost
-            }
-            final_payment = total + additional_cost + package_cost + entertainment_cost + updat_cost
+            final_payment = total + all_package_cost + entertainment_cost + updat_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -335,7 +319,7 @@
 
                 total = entertainment_cost
             }
-            final_payment = total + additional_cost + package_cost + updat_cost + equipment_cost
+            final_payment = total + additional_cost + all_package_cost + updat_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -351,7 +335,7 @@
 
                 total = updat_cost
             }
-            final_payment = total + additional_cost + package_cost + equipment_cost + entertainment_cost
+            final_payment = total + additional_cost + all_package_cost + entertainment_cost
             total_payment.innerHTML = final_payment
             minimal_payment.innerHTML = rupiah((final_payment * 10) / 100)
         })
@@ -369,6 +353,4 @@
             }).format(number);
         }
     </script>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\applications\maheswari-app\resources\views/pages/landing/booknow.blade.php ENDPATH**/ ?>
+@endsection

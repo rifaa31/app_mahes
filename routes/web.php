@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('landing')->group(function () {
     Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+    Route::get('/select-booking', [LandingController::class, 'select'])->name('landing.select');
+    Route::get('/allpackage', [LandingController::class, 'allpackage'])->name('landing.allpackage');
     Route::get('/booknow', [LandingController::class, 'booknow'])->name('landing.booknow');
     Route::post('/store', [LandingController::class, 'store'])->name('landing.store');
 });
@@ -31,6 +33,7 @@ Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang'
 
 Route::get('/', [LandingController::class, 'index'])->name('landing.index');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'root']);
+
 // Route::get('/calendar-event', [App\Http\Controllers\HomeController::class, 'root']);
 // Route::post('/calendar-crud-ajax', [App\Controllers\Http\HomeController::class, 'calendarEvents']);
 
@@ -64,8 +67,6 @@ Route::prefix('booking')->group(function () {
 
     Route::get('/{id}', [BookingController::class, 'getBookingById'])->name('booking.getBookingById');
 });
-
-
 
 Route::prefix('product')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('product.index');
